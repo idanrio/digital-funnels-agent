@@ -1,0 +1,63 @@
+{
+  "id": "real_estate",
+  "name": "Real Estate Agency",
+  "name_he": "סוכנות נדל\"ן",
+  "description": "Full CRM for real estate agents — property tags, buyer/seller fields, showing calendars, and SMS templates.",
+  "industries": ["real_estate", "realty", "property", "נדלן", "דירות", "נכסים"],
+  "variables": {
+    "business_name": {"description": "Agency name", "required": true},
+    "owner_name": {"description": "Agent / owner full name", "required": true},
+    "owner_email": {"description": "Agent email", "required": true},
+    "owner_phone": {"description": "Agent phone", "required": true},
+    "second_user_name": {"description": "Second agent name", "required": false, "default": ""},
+    "second_user_email": {"description": "Second agent email", "required": false, "default": ""},
+    "second_user_phone": {"description": "Second agent phone", "required": false, "default": ""},
+    "working_hours_start": {"description": "Start hour", "required": false, "default": "09:00"},
+    "working_hours_end": {"description": "End hour", "required": false, "default": "19:00"},
+    "working_days": {"description": "Working days", "required": false, "default": "sun-thu"}
+  },
+  "commands": [
+    {"action": "create_tag", "name": "ליד חדש"},
+    {"action": "create_tag", "name": "אין מענה"},
+    {"action": "create_tag", "name": "תיאם סיור"},
+    {"action": "create_tag", "name": "ליד חם"},
+    {"action": "create_tag", "name": "לא רלוונטי"},
+    {"action": "create_tag", "name": "פולו אפ"},
+    {"action": "create_tag", "name": "קונה"},
+    {"action": "create_tag", "name": "מוכר"},
+    {"action": "create_tag", "name": "משקיע"},
+    {"action": "create_tag", "name": "שוכר"},
+
+    {"action": "create_custom_field", "name": "סטטוס ליד", "data_type": "SINGLE_OPTIONS",
+     "options": ["ליד חדש", "אין מענה", "תיאם סיור", "ליד חם", "לא רלוונטי", "פולו אפ", "סגר עסקה"]},
+    {"action": "create_custom_field", "name": "סוג עסקה", "data_type": "SINGLE_OPTIONS",
+     "options": ["קנייה", "מכירה", "השכרה", "השקעה"]},
+    {"action": "create_custom_field", "name": "תקציב", "data_type": "MONETORY"},
+    {"action": "create_custom_field", "name": "אזור מבוקש", "data_type": "TEXT"},
+    {"action": "create_custom_field", "name": "מספר חדרים", "data_type": "NUMERICAL"},
+    {"action": "create_custom_field", "name": "סוג נכס", "data_type": "SINGLE_OPTIONS",
+     "options": ["דירה", "בית פרטי", "פנטהאוז", "קוטג'", "דופלקס", "מגרש", "מסחרי"]},
+    {"action": "create_custom_field", "name": "מקור ליד", "data_type": "SINGLE_OPTIONS",
+     "options": ["יד2", "מדלן", "אתר", "פייסבוק", "המלצה", "שלט", "אחר"]},
+    {"action": "create_custom_field", "name": "הערות סוכן", "data_type": "LARGE_TEXT"},
+    {"action": "create_custom_field", "name": "תאריך כניסה מבוקש", "data_type": "DATE"},
+
+    {"action": "create_template", "name": "ברוכים הבאים - נדלן", "type": "sms",
+     "body": "שלום {{contact.first_name}}, תודה שפנית ל{{business_name}}! 🏠 ניצור איתך קשר בהקדם לתיאום סיור. לכל שאלה - השב להודעה זו."},
+    {"action": "create_template", "name": "התראת ליד חדש", "type": "sms",
+     "body": "🔔 ליד חדש! שם: {{contact.first_name}} {{contact.last_name}} | טלפון: {{contact.phone}}"},
+    {"action": "create_template", "name": "תזכורת סיור", "type": "sms",
+     "body": "שלום {{contact.first_name}}, רק מזכירים שיש לך סיור דירה מתוכנן. מחכים לך! 🔑"},
+    {"action": "create_template", "name": "פולו אפ נדלן", "type": "sms",
+     "body": "שלום {{contact.first_name}}, האם מצאת כבר את הנכס שחיפשת? יש לנו כמה הצעות חדשות שיכולות להתאים לך 🏡"},
+
+    {"action": "create_user", "first_name": "{{owner_first_name}}", "last_name": "{{owner_last_name}}",
+     "email": "{{owner_email}}", "phone": "{{owner_phone}}", "role": "admin"},
+    {"action": "create_user", "first_name": "{{second_user_first_name}}", "last_name": "{{second_user_last_name}}",
+     "email": "{{second_user_email}}", "phone": "{{second_user_phone}}", "role": "admin"},
+
+    {"action": "create_calendar", "name": "סיורי דירות - {{owner_first_name}}", "calendarType": "personal",
+     "slotDuration": 45, "description": "לוח סיורים - {{owner_first_name}} {{owner_last_name}}",
+     "_availability": {"start": "{{working_hours_start}}", "end": "{{working_hours_end}}", "days": "{{working_days}}"}}
+  ]
+}

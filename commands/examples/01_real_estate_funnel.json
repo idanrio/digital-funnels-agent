@@ -1,0 +1,71 @@
+{
+    "action": "create_funnel",
+    "name": "משפך נדל\"ן - לידים חדשים",
+    "tags": [
+        "נדלן",
+        "לידים-חדשים",
+        "משפך-נדלן-v1"
+    ],
+    "custom_fields": [
+        {
+            "name": "סוג נכס",
+            "data_type": "SINGLE_OPTIONS",
+            "options": ["דירה", "בית פרטי", "פנטהאוז", "דו משפחתי", "מגרש", "מסחרי"]
+        },
+        {
+            "name": "תקציב",
+            "data_type": "SINGLE_OPTIONS",
+            "options": ["עד 1M", "1M-2M", "2M-3M", "3M-5M", "מעל 5M"]
+        },
+        {
+            "name": "אזור מועדף",
+            "data_type": "TEXT",
+            "placeholder": "הכנס אזור מועדף"
+        },
+        {
+            "name": "מספר חדרים",
+            "data_type": "NUMERICAL"
+        }
+    ],
+    "custom_values": [
+        {"name": "company.realestate.name", "value": "PrimeFlow נדל\"ן"},
+        {"name": "company.realestate.phone", "value": "+972-50-000-0000"},
+        {"name": "company.realestate.email", "value": "info@primeflow-realestate.co.il"}
+    ],
+    "templates": [
+        {
+            "type": "email",
+            "name": "ברוכים הבאים - נדל\"ן",
+            "subject": "ברוכים הבאים ל-PrimeFlow נדל\"ן!",
+            "html": "<div dir='rtl' style='font-family: Arial, sans-serif; text-align: right; max-width: 600px; margin: 0 auto;'><div style='background: linear-gradient(135deg, #2563eb, #1e40af); padding: 30px; border-radius: 12px 12px 0 0;'><h1 style='color: white; margin: 0;'>ברוכים הבאים! 🏠</h1></div><div style='padding: 30px; background: #f8fafc; border-radius: 0 0 12px 12px;'><p style='font-size: 16px; color: #334155;'>שלום {{contact.first_name}},</p><p style='font-size: 16px; color: #334155;'>תודה שפניתם אלינו. צוות המומחים שלנו ייצור איתכם קשר בהקדם כדי לעזור לכם למצוא את הנכס המושלם.</p><p style='font-size: 16px; color: #334155;'>בינתיים, הנה כמה דברים שכדאי לדעת:</p><ul style='color: #334155;'><li>ליווי מלא מא' עד ת'</li><li>גישה לנכסים בלעדיים</li><li>ייעוץ משכנתא חינם</li></ul><p style='font-size: 14px; color: #64748b;'>צוות PrimeFlow נדל\"ן</p></div></div>"
+        },
+        {
+            "type": "sms",
+            "name": "SMS ראשוני - נדל\"ן",
+            "body": "שלום {{contact.first_name}}! תודה שפנית ל-PrimeFlow נדל\"ן. נציג שלנו ייצור איתך קשר בקרוב. לפרטים נוספים: 050-000-0000"
+        }
+    ],
+    "contacts": [
+        {
+            "first_name": "יוסי",
+            "last_name": "כהן",
+            "email": "yossi.cohen@example.co.il",
+            "phone": "+972501111111",
+            "tags": ["נדלן", "לידים-חדשים"]
+        },
+        {
+            "first_name": "מיכל",
+            "last_name": "לוי",
+            "email": "michal.levi@example.co.il",
+            "phone": "+972502222222",
+            "tags": ["נדלן", "לידים-חדשים"]
+        },
+        {
+            "first_name": "דוד",
+            "last_name": "אברהמי",
+            "email": "david.avrahami@example.co.il",
+            "phone": "+972503333333",
+            "tags": ["נדלן", "לידים-חדשים"]
+        }
+    ]
+}

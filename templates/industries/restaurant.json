@@ -1,0 +1,55 @@
+{
+  "id": "restaurant",
+  "name": "Restaurant / Catering",
+  "name_he": "מסעדה / קייטרינג",
+  "description": "CRM setup for restaurants and catering — reservation management, event booking, customer engagement, and promotional templates.",
+  "industries": ["restaurant", "catering", "food", "cafe", "מסעדה", "קייטרינג", "בית קפה", "אוכל"],
+  "variables": {
+    "business_name": {"description": "Restaurant name", "required": true},
+    "owner_name": {"description": "Owner / manager name", "required": true},
+    "owner_email": {"description": "Owner email", "required": true},
+    "owner_phone": {"description": "Restaurant phone", "required": true},
+    "working_hours_start": {"description": "Opening hour", "required": false, "default": "10:00"},
+    "working_hours_end": {"description": "Closing hour", "required": false, "default": "23:00"},
+    "working_days": {"description": "Working days", "required": false, "default": "sun-sat"}
+  },
+  "commands": [
+    {"action": "create_tag", "name": "לקוח חדש"},
+    {"action": "create_tag", "name": "לקוח חוזר"},
+    {"action": "create_tag", "name": "VIP"},
+    {"action": "create_tag", "name": "הזמנת שולחן"},
+    {"action": "create_tag", "name": "אירוע פרטי"},
+    {"action": "create_tag", "name": "קייטרינג"},
+    {"action": "create_tag", "name": "יום הולדת"},
+    {"action": "create_tag", "name": "ברית / בר מצווה"},
+    {"action": "create_tag", "name": "אירוע עסקי"},
+    {"action": "create_tag", "name": "משלוח"},
+
+    {"action": "create_custom_field", "name": "סוג אירוע", "data_type": "SINGLE_OPTIONS",
+     "options": ["הזמנת שולחן", "יום הולדת", "אירוע פרטי", "אירוע עסקי", "ברית/בר מצווה", "חתונה", "קייטרינג"]},
+    {"action": "create_custom_field", "name": "מספר אורחים", "data_type": "NUMERICAL"},
+    {"action": "create_custom_field", "name": "תקציב אירוע", "data_type": "MONETORY"},
+    {"action": "create_custom_field", "name": "תאריך אירוע", "data_type": "DATE"},
+    {"action": "create_custom_field", "name": "העדפות תפריט", "data_type": "MULTIPLE_OPTIONS",
+     "options": ["בשרי", "חלבי", "טבעוני", "ללא גלוטן", "כשר", "ים תיכוני", "אסייתי"]},
+    {"action": "create_custom_field", "name": "מקור ליד", "data_type": "SINGLE_OPTIONS",
+     "options": ["אינסטגרם", "פייסבוק", "גוגל", "המלצה", "ווייז", "rest", "אחר"]},
+    {"action": "create_custom_field", "name": "הערות מיוחדות", "data_type": "LARGE_TEXT"},
+
+    {"action": "create_template", "name": "ברוכים הבאים - מסעדה", "type": "sms",
+     "body": "שלום {{contact.first_name}}, תודה שפנית ל{{business_name}}! 🍽️ נשמח לעזור לך עם ההזמנה. נחזור אליך בהקדם."},
+    {"action": "create_template", "name": "אישור הזמנה", "type": "sms",
+     "body": "שלום {{contact.first_name}}, ההזמנה שלך ב{{business_name}} אושרה! ✅ מחכים לך. לשינויים - השב להודעה."},
+    {"action": "create_template", "name": "תזכורת הזמנה", "type": "sms",
+     "body": "שלום {{contact.first_name}}, רק מזכירים שיש לך הזמנה ב{{business_name}} 🍽️ מחכים לך!"},
+    {"action": "create_template", "name": "הזמנה מיוחדת VIP", "type": "sms",
+     "body": "שלום {{contact.first_name}}, כלקוח VIP ב{{business_name}} יש לנו הצעה מיוחדת בשבילך! 🌟 רוצה לשמוע פרטים?"},
+
+    {"action": "create_user", "first_name": "{{owner_first_name}}", "last_name": "{{owner_last_name}}",
+     "email": "{{owner_email}}", "phone": "{{owner_phone}}", "role": "admin"},
+
+    {"action": "create_calendar", "name": "הזמנות שולחן", "calendarType": "personal",
+     "slotDuration": 120, "description": "הזמנת שולחן - {{business_name}}",
+     "_availability": {"start": "{{working_hours_start}}", "end": "{{working_hours_end}}", "days": "{{working_days}}"}}
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "סטטוס עסקה",
+      "fieldKey": "contact.e2e_deal_status",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["חדש", "בטיפול", "ממתין לאישור", "נסגר בהצלחה", "בוטל"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "תקציב מוערך",
+      "fieldKey": "contact.e2e_estimated_budget",
+      "data_type": "MONETORY",
+      "placeholder": "סכום בשקלים"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "תאריך פגישה ראשונה",
+      "fieldKey": "contact.e2e_first_meeting_date",
+      "data_type": "DATE"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "סיכום שיחה",
+      "fieldKey": "contact.e2e_call_summary",
+      "data_type": "LARGE_TEXT",
+      "placeholder": "סיכום קצר של השיחה עם הלקוח"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "מספר חדרים מבוקש",
+      "fieldKey": "contact.e2e_rooms_requested",
+      "data_type": "NUMERICAL",
+      "placeholder": "מספר חדרים"
+    },
+    {
+      "action": "create_tag",
+      "name": "e2e-lead-new"
+    },
+    {
+      "action": "create_tag",
+      "name": "e2e-lead-qualified"
+    },
+    {
+      "action": "create_tag",
+      "name": "e2e-meeting-scheduled"
+    },
+    {
+      "action": "create_tag",
+      "name": "e2e-deal-closed"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.e2e_office_address",
+      "value": "רחוב הרצל 10, תל אביב"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.e2e_support_email",
+      "value": "support@e2e-test.co.il"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.e2e_working_hours",
+      "value": "א'-ה' 09:00-18:00, שישי 09:00-13:00"
+    },
+    {
+      "action": "create_contact",
+      "first_name": "e2eTest",
+      "last_name": "Cohen",
+      "email": "e2e.cohen@testprimeflow.com",
+      "phone": "+972501111111",
+      "tags": ["e2e-lead-new"]
+    },
+    {
+      "action": "create_contact",
+      "first_name": "e2eTest",
+      "last_name": "Levi",
+      "email": "e2e.levi@testprimeflow.com",
+      "phone": "+972502222222",
+      "tags": ["e2e-lead-qualified"]
+    },
+    {
+      "action": "create_contact",
+      "first_name": "e2eTest",
+      "last_name": "Mizrahi",
+      "email": "e2e.mizrahi@testprimeflow.com",
+      "phone": "+972503333333",
+      "tags": ["e2e-meeting-scheduled"]
+    },
+    {
+      "action": "create_calendar",
+      "name": "E2E - Discovery Call",
+      "description": "30-minute introductory call with new leads",
+      "calendarType": "event",
+      "slotDuration": 30,
+      "slotInterval": 15
+    },
+    {
+      "action": "create_calendar",
+      "name": "E2E - Strategy Session",
+      "description": "60-minute deep dive strategy session",
+      "calendarType": "event",
+      "slotDuration": 60,
+      "slotInterval": 30
+    },
+    {
+      "action": "create_calendar",
+      "name": "E2E - Team Standup",
+      "description": "15-minute daily team standup",
+      "calendarType": "event",
+      "slotDuration": 15,
+      "slotInterval": 15
+    },
+    {
+      "action": "create_user",
+      "company_id": "0jDspE9Vyp9M0npoauD9",
+      "first_name": "E2E-Alice",
+      "last_name": "TestWorker",
+      "email": "e2e.alice@primeflow-test.com",
+      "password": "E2eTest2026!",
+      "role": "user",
+      "type": "account",
+      "locationIds": ["0ryDxpttZ3SBRNMgXp57"],
+      "permissions": {
+        "contactsEnabled": true,
+        "campaignsEnabled": true,
+        "opportunitiesEnabled": true
+      }
+    },
+    {
+      "action": "create_user",
+      "company_id": "0jDspE9Vyp9M0npoauD9",
+      "first_name": "E2E-Bob",
+      "last_name": "TestWorker",
+      "email": "e2e.bob@primeflow-test.com",
+      "password": "E2eTest2026!",
+      "role": "user",
+      "type": "account",
+      "locationIds": ["0ryDxpttZ3SBRNMgXp57"],
+      "permissions": {
+        "contactsEnabled": true,
+        "campaignsEnabled": true,
+        "opportunitiesEnabled": true
+      }
+    },
+    {
+      "action": "create_user",
+      "company_id": "0jDspE9Vyp9M0npoauD9",
+      "first_name": "E2E-Carol",
+      "last_name": "TestWorker",
+      "email": "e2e.carol@primeflow-test.com",
+      "password": "E2eTest2026!",
+      "role": "user",
+      "type": "account",
+      "locationIds": ["0ryDxpttZ3SBRNMgXp57"],
+      "permissions": {
+        "contactsEnabled": true,
+        "campaignsEnabled": true,
+        "opportunitiesEnabled": true
+      }
+    },
+    {
+      "action": "create_ai_agent",
+      "name": "E2E סוכן מכירות",
+      "business_name": "E2E Test Business",
+      "language": "he",
+      "mode": "suggestive",
+      "goals": "1. לזהות צרכי הלקוח\n2. לתאם פגישת היכרות\n3. לאסוף פרטי קשר",
+      "greeting": "שלום! אני הנציג הדיגיטלי של E2E Test Business. במה אוכל לעזור?",
+      "additional_instructions": "כתוב תמיד בעברית. הודעות קצרות של 1-3 משפטים."
+    },
+    {
+      "action": "create_custom_object",
+      "key": "custom_objects.e2e_projects",
+      "labels": {
+        "singular": "E2E Project",
+        "plural": "E2E Projects"
+      },
+      "description": "Project tracking for E2E test",
+      "primaryDisplayPropertyDetails": {
+        "name": "Project Name",
+        "key": "project_name",
+        "dataType": "TEXT"
+      }
+    },
+    {
+      "action": "create_custom_object",
+      "key": "custom_objects.e2e_invoices",
+      "labels": {
+        "singular": "E2E Invoice",
+        "plural": "E2E Invoices"
+      },
+      "description": "Invoice tracking for E2E test",
+      "primaryDisplayPropertyDetails": {
+        "name": "Invoice Number",
+        "key": "invoice_number",
+        "dataType": "TEXT"
+      }
+    },
+    {
+      "action": "create_custom_object",
+      "key": "custom_objects.e2e_tasks",
+      "labels": {
+        "singular": "E2E Task",
+        "plural": "E2E Tasks"
+      },
+      "description": "Task management for E2E test",
+      "primaryDisplayPropertyDetails": {
+        "name": "Task Title",
+        "key": "task_title",
+        "dataType": "TEXT"
+      }
+    },
+    {
+      "action": "create_association",
+      "key": "e2e_projects_to_contact",
+      "firstObjectKey": "custom_objects.e2e_projects",
+      "secondObjectKey": "contact"
+    },
+    {
+      "action": "create_association",
+      "key": "e2e_invoices_to_contact",
+      "firstObjectKey": "custom_objects.e2e_invoices",
+      "secondObjectKey": "contact"
+    },
+    {
+      "action": "create_association",
+      "key": "e2e_tasks_to_contact",
+      "firstObjectKey": "custom_objects.e2e_tasks",
+      "secondObjectKey": "contact"
+    }
+  ]
+}

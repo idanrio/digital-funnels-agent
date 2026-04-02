@@ -1,0 +1,22 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-2efeee3b-ab84-4213-ac91-87c71b517579",
+  "commands": [
+    {"action": "create_custom_field", "name": "סטטוס טסט X", "fieldKey": "contact.test_x_status", "data_type": "SINGLE_OPTIONS", "options": ["חדש", "בטיפול", "הושלם", "בוטל"]},
+    {"action": "create_custom_field", "name": "תקציב טסט X", "fieldKey": "contact.test_x_budget", "data_type": "MONETORY"},
+    {"action": "create_custom_field", "name": "הערות טסט X", "fieldKey": "contact.test_x_notes", "data_type": "LARGE_TEXT"},
+
+    {"action": "create_tag", "name": "test-x-lead"},
+    {"action": "create_tag", "name": "test-x-vip"},
+    {"action": "create_tag", "name": "test-x-follow-up"},
+
+    {"action": "create_contact", "first_name": "טסט", "last_name": "איקס", "email": "testx@primeflow-test.com", "phone": "+972501234567", "tags": ["test-x-lead"], "source": "Test X", "companyName": "PrimeFlow Test"},
+
+    {"action": "create_template", "name": "טסט X - ברוכים הבאים", "type": "sms", "body": "שלום {{contact.first_name}}, תודה שפנית אלינו! צוות PrimeFlow יצור איתך קשר בהקדם."},
+    {"action": "create_template", "name": "טסט X - התראת ליד", "type": "sms", "body": "ליד חדש מטסט X! שם: {{contact.first_name}} {{contact.last_name}} | טלפון: {{contact.phone}}"},
+
+    {"action": "create_custom_value", "name": "company.testx.name", "value": "PrimeFlow Test X"},
+    {"action": "create_custom_value", "name": "company.testx.phone", "value": "03-9999999"},
+    {"action": "create_custom_value", "name": "company.testx.email", "value": "testx@primeflow.ai"}
+  ]
+}

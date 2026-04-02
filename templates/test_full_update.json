@@ -1,0 +1,60 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "update_tag",
+      "current_name": "fulltest-new-lead",
+      "name": "fulltest-active-lead"
+    },
+    {
+      "action": "update_calendar",
+      "current_name": "FullTest - Property Tour",
+      "description": "Updated: 45-minute premium property tour",
+      "slotDuration": 45
+    },
+    {
+      "action": "update_contact",
+      "email": "fulltest.avi@testprimeflow.com",
+      "phone": "+97250500099",
+      "companyName": "Cohen Premium Properties"
+    },
+    {
+      "action": "update_contact",
+      "email": "fulltest.dana@testprimeflow.com",
+      "phone": "+97252500099",
+      "companyName": "Levi Design Studio"
+    },
+    {
+      "action": "update_custom_value",
+      "name": "company.fulltest.phone",
+      "value": "03-9999999"
+    },
+    {
+      "action": "update_custom_value",
+      "name": "company.fulltest.hours",
+      "value": "Sun-Fri 08:00-20:00"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.fulltest.name",
+      "value": "FullTest Premium Real Estate"
+    },
+    {
+      "action": "create_tag",
+      "name": "fulltest-qualified"
+    },
+    {
+      "action": "create_tag",
+      "name": "fulltest-client"
+    },
+    {
+      "action": "create_template",
+      "name": "FullTest - Welcome Email"
+    },
+    {
+      "action": "create_template",
+      "name": "FullTest - Welcome SMS"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "location_id": "gHuEKD6F1mW44PUeXBR4",
+  "api_key": "pit-1b15eb26-a418-4532-af5e-20ab0a47665c",
+  "commands": [
+    {
+      "action": "create_tag",
+      "name": "2fa-rejection-test"
+    }
+  ]
+}

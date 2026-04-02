@@ -1,0 +1,201 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "סטטוס לקוח",
+      "fieldKey": "contact.testf_client_status",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["ליד חדש", "בתהליך", "לקוח פעיל", "לקוח לשימור", "עזב"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "תקציב חודשי",
+      "fieldKey": "contact.testf_monthly_budget",
+      "data_type": "MONETORY",
+      "placeholder": "תקציב חודשי בשקלים"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "תחומי עניין",
+      "fieldKey": "contact.testf_interests",
+      "data_type": "MULTIPLE_OPTIONS",
+      "options": ["שיווק דיגיטלי", "SEO", "קמפיינים ממומנים", "רשתות חברתיות", "אתרים", "בינה מלאכותית"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "הערות פנימיות",
+      "fieldKey": "contact.testf_internal_notes",
+      "data_type": "LARGE_TEXT",
+      "placeholder": "הערות פנימיות על הלקוח"
+    },
+    {
+      "action": "create_tag",
+      "name": "testf-lead-inbound"
+    },
+    {
+      "action": "create_tag",
+      "name": "testf-lead-qualified"
+    },
+    {
+      "action": "create_tag",
+      "name": "testf-client-active"
+    },
+    {
+      "action": "create_tag",
+      "name": "testf-client-vip"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.testf_company_slogan",
+      "value": "מובילים את העסק שלך קדימה עם טכנולוגיה חכמה"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.testf_main_phone",
+      "value": "03-1234567"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.testf_website",
+      "value": "https://testf-digital.co.il"
+    },
+    {
+      "action": "create_contact",
+      "first_name": "testF",
+      "last_name": "Avraham",
+      "email": "testf.avraham@testprimeflow.com",
+      "phone": "+972504001001",
+      "tags": ["testf-lead-inbound"]
+    },
+    {
+      "action": "create_contact",
+      "first_name": "testF",
+      "last_name": "Barak",
+      "email": "testf.barak@testprimeflow.com",
+      "phone": "+972504002002",
+      "tags": ["testf-lead-qualified"]
+    },
+    {
+      "action": "create_contact",
+      "first_name": "testF",
+      "last_name": "Carmel",
+      "email": "testf.carmel@testprimeflow.com",
+      "phone": "+972504003003",
+      "tags": ["testf-client-active"]
+    },
+    {
+      "action": "create_calendar",
+      "name": "TestF - Free Strategy Call",
+      "description": "שיחת אסטרטגיה חינמית של 20 דקות ללקוחות חדשים",
+      "calendarType": "event",
+      "slotDuration": 20,
+      "slotInterval": 10
+    },
+    {
+      "action": "create_calendar",
+      "name": "TestF - Deep Dive Session",
+      "description": "סשן מעמיק של 45 דקות לניתוח צרכים",
+      "calendarType": "event",
+      "slotDuration": 45,
+      "slotInterval": 15
+    },
+    {
+      "action": "create_calendar",
+      "name": "TestF - Weekly Review",
+      "description": "סקירה שבועית עם לקוחות פעילים",
+      "calendarType": "event",
+      "slotDuration": 30,
+      "slotInterval": 15
+    },
+    {
+      "action": "create_ai_agent",
+      "name": "טל",
+      "business_name": "TestF Digital Agency",
+      "niche": "coaching",
+      "language": "he",
+      "mode": "auto-pilot",
+      "goals": "1. לזהות את האתגר המרכזי של בעל העסק\n2. להבין מה כבר ניסו ומה עבד/לא עבד\n3. לתאם שיחת אסטרטגיה חינמית\n4. לאסוף פרטי קשר מלאים",
+      "business_brief": "סוכנות דיגיטלית שעוזרת לעסקים קטנים ובינוניים לצמוח דרך שיווק חכם. אנחנו לא מוכרים חלומות — אנחנו בונים מערכות שיווק שעובדות. הלקוחות שלנו הם בעלי עסקים שרוצים לגדול אבל לא יודעים מאיפה להתחיל בדיגיטל.",
+      "additional_instructions": "אל תדבר בטון של גורו שיווקי. תדבר כמו מישהו שהיה שם ועזר לעסקים דומים. אם הלקוח שואל שאלה טכנית מדי — תגיד שזה בדיוק מה שנעבור עליו בשיחה.",
+      "faq": [
+        {"q": "כמה זה עולה?", "a": "החבילות מתחילות מ-3,000 ש\"ח בחודש, אבל זה תלוי בצרכים. בשיחה נבין מה מתאים."},
+        {"q": "כמה זמן לוקח לראות תוצאות?", "a": "בדרך כלל 2-3 חודשים לתוצאות ראשוניות, אבל זה תלוי בתחום ובמצב הנוכחי."},
+        {"q": "אתם עובדים עם עסקים קטנים?", "a": "כן, רוב הלקוחות שלנו הם עסקים קטנים-בינוניים. זה בדיוק מה שאנחנו מתמחים בו."},
+        {"q": "מה ההבדל בינכם לבין פרילנסר?", "a": "אצלנו יש צוות מלא — אסטרטגיה, קריאייטיב, פרסום, וניתוח נתונים. לא תלויים באדם אחד."}
+      ],
+      "operating_hours": "א'-ה' 09:00-18:00, שישי 09:00-13:00",
+      "services": [
+        "בניית אסטרטגיית שיווק דיגיטלי",
+        "ניהול קמפיינים בגוגל ופייסבוק",
+        "בניית אתרים ודפי נחיתה",
+        "SEO וקידום אורגני",
+        "ניהול רשתות חברתיות",
+        "אוטומציות שיווקיות"
+      ],
+      "pricing": "חבילת בסיס: 3,000 ש\"ח/חודש | חבילת צמיחה: 5,500 ש\"ח/חודש | חבילת פרימיום: 9,000 ש\"ח/חודש",
+      "greeting": "היי, מה קורה? אני טל מ-TestF Digital. ראיתי שפנית אלינו, ספר/י לי קצת מה מביא אותך."
+    },
+    {
+      "action": "create_custom_object",
+      "key": "custom_objects.testf_campaigns",
+      "labels": {
+        "singular": "TestF Campaign",
+        "plural": "TestF Campaigns"
+      },
+      "description": "Campaign tracking for TestF clients",
+      "primaryDisplayPropertyDetails": {
+        "name": "Campaign Name",
+        "key": "campaign_name",
+        "dataType": "TEXT"
+      }
+    },
+    {
+      "action": "create_custom_object",
+      "key": "custom_objects.testf_reports",
+      "labels": {
+        "singular": "TestF Report",
+        "plural": "TestF Reports"
+      },
+      "description": "Monthly reports for TestF clients",
+      "primaryDisplayPropertyDetails": {
+        "name": "Report Title",
+        "key": "report_title",
+        "dataType": "TEXT"
+      }
+    },
+    {
+      "action": "create_custom_object",
+      "key": "custom_objects.testf_proposals",
+      "labels": {
+        "singular": "TestF Proposal",
+        "plural": "TestF Proposals"
+      },
+      "description": "Client proposals tracking",
+      "primaryDisplayPropertyDetails": {
+        "name": "Proposal Title",
+        "key": "proposal_title",
+        "dataType": "TEXT"
+      }
+    },
+    {
+      "action": "create_association",
+      "key": "testf_campaigns_to_contact",
+      "firstObjectKey": "custom_objects.testf_campaigns",
+      "secondObjectKey": "contact"
+    },
+    {
+      "action": "create_association",
+      "key": "testf_reports_to_contact",
+      "firstObjectKey": "custom_objects.testf_reports",
+      "secondObjectKey": "contact"
+    },
+    {
+      "action": "create_association",
+      "key": "testf_proposals_to_contact",
+      "firstObjectKey": "custom_objects.testf_proposals",
+      "secondObjectKey": "contact"
+    }
+  ]
+}

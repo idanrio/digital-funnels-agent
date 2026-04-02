@@ -1,0 +1,56 @@
+{
+  "id": "gym_fitness",
+  "name": "Gym & Fitness Studio",
+  "name_he": "חדר כושר / סטודיו",
+  "description": "Full CRM for gyms and fitness studios — membership management, class scheduling, trial bookings, and engagement templates.",
+  "industries": ["gym", "fitness", "studio", "personal_training", "כושר", "חדר כושר", "סטודיו", "אימון"],
+  "variables": {
+    "business_name": {"description": "Gym/studio name", "required": true},
+    "owner_name": {"description": "Owner / manager name", "required": true},
+    "owner_email": {"description": "Owner email", "required": true},
+    "owner_phone": {"description": "Owner phone", "required": true},
+    "working_hours_start": {"description": "Opening hour", "required": false, "default": "06:00"},
+    "working_hours_end": {"description": "Closing hour", "required": false, "default": "22:00"},
+    "working_days": {"description": "Working days", "required": false, "default": "sun-fri"}
+  },
+  "commands": [
+    {"action": "create_tag", "name": "ליד חדש"},
+    {"action": "create_tag", "name": "מנוי פעיל"},
+    {"action": "create_tag", "name": "מנוי לא פעיל"},
+    {"action": "create_tag", "name": "אימון ניסיון"},
+    {"action": "create_tag", "name": "אימון אישי"},
+    {"action": "create_tag", "name": "שיעור קבוצתי"},
+    {"action": "create_tag", "name": "VIP"},
+    {"action": "create_tag", "name": "פולו אפ"},
+    {"action": "create_tag", "name": "חידוש מנוי"},
+    {"action": "create_tag", "name": "הקפאת מנוי"},
+
+    {"action": "create_custom_field", "name": "סטטוס ליד", "data_type": "SINGLE_OPTIONS",
+     "options": ["ליד חדש", "אין מענה", "תיאם אימון ניסיון", "מנוי פעיל", "מנוי לא פעיל", "לא רלוונטי"]},
+    {"action": "create_custom_field", "name": "סוג מנוי", "data_type": "SINGLE_OPTIONS",
+     "options": ["חודשי", "רבעוני", "חצי שנתי", "שנתי", "אימון אישי", "ניסיון"]},
+    {"action": "create_custom_field", "name": "תאריך תחילת מנוי", "data_type": "DATE"},
+    {"action": "create_custom_field", "name": "תאריך סיום מנוי", "data_type": "DATE"},
+    {"action": "create_custom_field", "name": "מטרת אימון", "data_type": "SINGLE_OPTIONS",
+     "options": ["ירידה במשקל", "בניית שריר", "שיפור כושר", "שיקום", "בריאות כללית"]},
+    {"action": "create_custom_field", "name": "מקור ליד", "data_type": "SINGLE_OPTIONS",
+     "options": ["אינסטגרם", "פייסבוק", "גוגל", "המלצה", "שלט", "אתר", "אחר"]},
+    {"action": "create_custom_field", "name": "הערות מאמן", "data_type": "LARGE_TEXT"},
+
+    {"action": "create_template", "name": "ברוכים הבאים - כושר", "type": "sms",
+     "body": "שלום {{contact.first_name}}, תודה שפנית ל{{business_name}}! 💪 נשמח לתאם לך אימון ניסיון חינם. מתי נוח לך?"},
+    {"action": "create_template", "name": "תזכורת אימון", "type": "sms",
+     "body": "שלום {{contact.first_name}}, רק מזכירים שיש לך אימון היום ב{{business_name}} 🏋️ מחכים לך!"},
+    {"action": "create_template", "name": "חידוש מנוי", "type": "sms",
+     "body": "שלום {{contact.first_name}}, המנוי שלך ב{{business_name}} עומד להסתיים. רוצה לחדש? יש לנו הצעה מיוחדת בשבילך! 🎯"},
+    {"action": "create_template", "name": "חזרה לאימונים", "type": "sms",
+     "body": "שלום {{contact.first_name}}, שמנו לב שלא היית אצלנו לאחרונה. חוזרים לאימונים? 💪 {{business_name}} מחכים לך!"},
+
+    {"action": "create_user", "first_name": "{{owner_first_name}}", "last_name": "{{owner_last_name}}",
+     "email": "{{owner_email}}", "phone": "{{owner_phone}}", "role": "admin"},
+
+    {"action": "create_calendar", "name": "אימון ניסיון", "calendarType": "personal",
+     "slotDuration": 60, "description": "לוח אימוני ניסיון - {{business_name}}",
+     "_availability": {"start": "{{working_hours_start}}", "end": "{{working_hours_end}}", "days": "{{working_days}}"}}
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "PromptTest - Budget",
+      "data_type": "NUMERICAL",
+      "placeholder": "Amount in NIS"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "PromptTest - Property Type",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["Apartment", "Penthouse", "Villa", "Land", "Commercial"]
+    },
+    {
+      "action": "create_tag",
+      "name": "prompttest-new-lead"
+    },
+    {
+      "action": "create_tag",
+      "name": "prompttest-qualified"
+    },
+    {
+      "action": "create_tag",
+      "name": "prompttest-client"
+    },
+    {
+      "action": "create_contact",
+      "first_name": "PromptTest Avi",
+      "last_name": "Goldstein",
+      "email": "prompttest.avi@testprimeflow.com",
+      "phone": "+97250400001",
+      "tags": ["prompttest-new-lead"],
+      "source": "Google Ads",
+      "companyName": "Goldstein Properties"
+    },
+    {
+      "action": "create_contact",
+      "first_name": "PromptTest Nirit",
+      "last_name": "Dahan",
+      "email": "prompttest.nirit@testprimeflow.com",
+      "phone": "+97252400002",
+      "tags": ["prompttest-qualified"],
+      "source": "Facebook",
+      "companyName": "Dahan Interiors"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.prompttest.name",
+      "value": "PromptTest Real Estate"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.prompttest.phone",
+      "value": "03-7654321"
+    },
+    {
+      "action": "create_template",
+      "name": "PromptTest - Welcome Email",
+      "type": "email",
+      "subject": "Welcome to PromptTest Real Estate",
+      "html": "<html><body style='font-family:Arial,sans-serif;'><div style='max-width:600px;margin:0 auto;'><div style='background:#1a365d;padding:30px;text-align:center;'><h1 style='color:#fff;margin:0;'>PromptTest Real Estate</h1></div><div style='padding:25px;'><h2>Welcome, {{contact.first_name}}</h2><p>Thank you for reaching out. We'll help you find the perfect property.</p></div></div></body></html>"
+    },
+    {
+      "action": "create_template",
+      "name": "PromptTest - Welcome SMS",
+      "type": "sms",
+      "body": "Hi {{contact.first_name}}, thanks for contacting PromptTest Real Estate. We'll be in touch shortly. Call us: 03-7654321"
+    },
+    {
+      "action": "create_calendar",
+      "name": "PromptTest - Property Tour",
+      "description": "Free 30-minute property tour with our agent",
+      "calendarType": "event",
+      "slotDuration": 30,
+      "slotInterval": 30
+    }
+  ]
+}

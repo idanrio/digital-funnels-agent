@@ -1,0 +1,61 @@
+{
+  "id": "dental_clinic",
+  "name": "Dental Clinic",
+  "name_he": "מרפאת שיניים",
+  "description": "Full CRM for dental clinics — patient management, appointment booking, treatment tracking, and reminder templates.",
+  "industries": ["dental", "clinic", "medical", "dentist", "שיניים", "מרפאה", "רפואה"],
+  "variables": {
+    "business_name": {"description": "Clinic name", "required": true},
+    "owner_name": {"description": "Doctor / manager name", "required": true},
+    "owner_email": {"description": "Doctor email", "required": true},
+    "owner_phone": {"description": "Clinic phone", "required": true},
+    "second_user_name": {"description": "Second doctor/assistant", "required": false, "default": ""},
+    "second_user_email": {"description": "Second user email", "required": false, "default": ""},
+    "second_user_phone": {"description": "Second user phone", "required": false, "default": ""},
+    "working_hours_start": {"description": "Start hour", "required": false, "default": "08:00"},
+    "working_hours_end": {"description": "End hour", "required": false, "default": "18:00"},
+    "working_days": {"description": "Working days", "required": false, "default": "sun-thu"}
+  },
+  "commands": [
+    {"action": "create_tag", "name": "מטופל חדש"},
+    {"action": "create_tag", "name": "מטופל קבוע"},
+    {"action": "create_tag", "name": "תיאם תור"},
+    {"action": "create_tag", "name": "אין מענה"},
+    {"action": "create_tag", "name": "ביטול תור"},
+    {"action": "create_tag", "name": "טיפול דחוף"},
+    {"action": "create_tag", "name": "טיפול שיננית"},
+    {"action": "create_tag", "name": "השתלות"},
+    {"action": "create_tag", "name": "אורתודנטיה"},
+    {"action": "create_tag", "name": "VIP"},
+
+    {"action": "create_custom_field", "name": "סטטוס מטופל", "data_type": "SINGLE_OPTIONS",
+     "options": ["מטופל חדש", "אין מענה", "תיאם תור", "בטיפול", "סיים טיפול", "לא רלוונטי"]},
+    {"action": "create_custom_field", "name": "סוג טיפול", "data_type": "SINGLE_OPTIONS",
+     "options": ["בדיקה כללית", "שיננית", "עקירה", "שתל", "כתר", "ציפוי", "אורתודנטיה", "הלבנה", "אחר"]},
+    {"action": "create_custom_field", "name": "תאריך תור הבא", "data_type": "DATE"},
+    {"action": "create_custom_field", "name": "הערות רופא", "data_type": "LARGE_TEXT"},
+    {"action": "create_custom_field", "name": "קופת חולים", "data_type": "SINGLE_OPTIONS",
+     "options": ["כללית", "מכבי", "מאוחדת", "לאומית", "פרטי"]},
+    {"action": "create_custom_field", "name": "אלרגיות / רגישויות", "data_type": "TEXT"},
+    {"action": "create_custom_field", "name": "מקור הפניה", "data_type": "SINGLE_OPTIONS",
+     "options": ["גוגל", "פייסבוק", "המלצה", "ביטוח", "אתר", "אחר"]},
+
+    {"action": "create_template", "name": "ברוכים הבאים - מרפאה", "type": "sms",
+     "body": "שלום {{contact.first_name}}, תודה שפנית ל{{business_name}}! 🦷 נציג שלנו יחזור אליך בהקדם לתיאום תור. לכל שאלה - השב להודעה זו."},
+    {"action": "create_template", "name": "תזכורת תור", "type": "sms",
+     "body": "שלום {{contact.first_name}}, רק מזכירים שיש לך תור ב{{business_name}}. מחכים לך! 😊 לביטול או שינוי - השב להודעה."},
+    {"action": "create_template", "name": "התראת מטופל חדש", "type": "sms",
+     "body": "🔔 מטופל חדש! שם: {{contact.first_name}} {{contact.last_name}} | טלפון: {{contact.phone}}"},
+    {"action": "create_template", "name": "תזכורת טיפול חוזר", "type": "sms",
+     "body": "שלום {{contact.first_name}}, הגיע הזמן לביקור תקופתי ב{{business_name}}. נשמח לקבוע לך תור 🦷 השב להודעה או התקשר אלינו."},
+
+    {"action": "create_user", "first_name": "{{owner_first_name}}", "last_name": "{{owner_last_name}}",
+     "email": "{{owner_email}}", "phone": "{{owner_phone}}", "role": "admin"},
+    {"action": "create_user", "first_name": "{{second_user_first_name}}", "last_name": "{{second_user_last_name}}",
+     "email": "{{second_user_email}}", "phone": "{{second_user_phone}}", "role": "user"},
+
+    {"action": "create_calendar", "name": "תורים - {{owner_first_name}}", "calendarType": "personal",
+     "slotDuration": 30, "description": "לוח תורים - {{owner_first_name}} {{owner_last_name}}",
+     "_availability": {"start": "{{working_hours_start}}", "end": "{{working_hours_end}}", "days": "{{working_days}}"}}
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+
+    {"action": "create_custom_field", "name": "TestI - שם החברה", "fieldKey": "contact.testi_company_name", "data_type": "TEXT", "placeholder": "שם החברה"},
+    {"action": "create_custom_field", "name": "TestI - תיאור הפרויקט", "fieldKey": "contact.testi_project_desc", "data_type": "LARGE_TEXT", "placeholder": "תאר/י את הפרויקט"},
+    {"action": "create_custom_field", "name": "TestI - מספר עובדים", "fieldKey": "contact.testi_employee_count", "data_type": "NUMERICAL", "placeholder": "מספר עובדים"},
+    {"action": "create_custom_field", "name": "TestI - טלפון משרד", "fieldKey": "contact.testi_office_phone", "data_type": "PHONE"},
+    {"action": "create_custom_field", "name": "TestI - תקציב שנתי", "fieldKey": "contact.testi_annual_budget", "data_type": "MONETORY"},
+    {"action": "create_custom_field", "name": "TestI - מאושר לשיווק", "fieldKey": "contact.testi_marketing_approved", "data_type": "CHECKBOX", "options": ["כן", "לא"]},
+    {"action": "create_custom_field", "name": "TestI - סטטוס עסקה", "fieldKey": "contact.testi_deal_status", "data_type": "SINGLE_OPTIONS", "options": ["ליד חדש", "פגישה נקבעה", "הצעה נשלחה", "משא ומתן", "סגור-זכייה", "סגור-הפסד"]},
+    {"action": "create_custom_field", "name": "TestI - שירותים מבוקשים", "fieldKey": "contact.testi_requested_services", "data_type": "MULTIPLE_OPTIONS", "options": ["SEO", "PPC", "סושיאל", "אימייל מרקטינג", "בניית אתר", "אוטומציה", "מיתוג"]},
+    {"action": "create_custom_field", "name": "TestI - תאריך תחילת פרויקט", "fieldKey": "contact.testi_project_start", "data_type": "DATE"},
+    {"action": "create_custom_field", "name": "TestI - ערוצי תקשורת", "fieldKey": "contact.testi_comm_channels", "data_type": "TEXTBOX_LIST", "textBoxListOptions": ["וואטסאפ", "אימייל", "טלפון", "SMS", "צ'אט באתר"]},
+    {"action": "create_custom_field", "name": "TestI - זמן פגישה מועדף", "fieldKey": "contact.testi_preferred_time", "data_type": "TIME"},
+    {"action": "create_custom_field", "name": "TestI - עדיפות טיפול", "fieldKey": "contact.testi_priority", "data_type": "RADIO", "options": ["נמוכה", "בינונית", "גבוהה", "דחופה"]},
+    {"action": "create_custom_field", "name": "TestI - העלאת מסמכים", "fieldKey": "contact.testi_docs_upload", "data_type": "FILE_UPLOAD"},
+
+    {"action": "create_tag", "name": "testi-lead-new"},
+    {"action": "create_tag", "name": "testi-lead-qualified"},
+    {"action": "create_tag", "name": "testi-client-active"},
+    {"action": "create_tag", "name": "testi-client-vip"},
+    {"action": "create_tag", "name": "testi-churned"},
+    {"action": "create_tag", "name": "testi-referral"},
+    {"action": "create_tag", "name": "testi-webinar-attendee"},
+
+    {"action": "create_custom_value", "name": "company.testi_slogan", "value": "הפתרון הדיגיטלי המלא לעסק שלך"},
+    {"action": "create_custom_value", "name": "company.testi_support_phone", "value": "03-7654321"},
+    {"action": "create_custom_value", "name": "company.testi_support_email", "value": "support@testi-agency.co.il"},
+    {"action": "create_custom_value", "name": "company.testi_address", "value": "רוטשילד 45, תל אביב"},
+    {"action": "create_custom_value", "name": "company.testi_working_hours", "value": "א'-ה' 09:00-18:00, ו' 09:00-13:00"},
+
+    {"action": "create_calendar", "name": "TestI - שיחת היכרות", "description": "שיחת היכרות חינמית של 15 דקות", "calendarType": "event", "slotDuration": 15, "slotInterval": 5},
+    {"action": "create_calendar", "name": "TestI - ייעוץ שיווקי", "description": "פגישת ייעוץ שיווקי מקיפה של 45 דקות", "calendarType": "event", "slotDuration": 45, "slotInterval": 15},
+    {"action": "create_calendar", "name": "TestI - הדגמת מוצר", "description": "הדגמה חיה של הפלטפורמה - 30 דקות", "calendarType": "event", "slotDuration": 30, "slotInterval": 10},
+    {"action": "create_calendar", "name": "TestI - פגישת אונבורדינג", "description": "פגישת הכרות וקליטה ללקוח חדש - 60 דקות", "calendarType": "event", "slotDuration": 60, "slotInterval": 15},
+    {"action": "create_calendar", "name": "TestI - סקירה חודשית", "description": "סקירת ביצועים חודשית עם מנהל חשבון", "calendarType": "event", "slotDuration": 30, "slotInterval": 10},
+
+    {"action": "create_contact", "first_name": "testI", "last_name": "Levy", "email": "testi.levy@testprimeflow.com", "phone": "+972501001001", "tags": ["testi-lead-new"]},
+    {"action": "create_contact", "first_name": "testI", "last_name": "Cohen", "email": "testi.cohen@testprimeflow.com", "phone": "+972501002002", "tags": ["testi-lead-qualified"]},
+    {"action": "create_contact", "first_name": "testI", "last_name": "Mizrachi", "email": "testi.mizrachi@testprimeflow.com", "phone": "+972501003003", "tags": ["testi-client-active"]},
+    {"action": "create_contact", "first_name": "testI", "last_name": "Avraham", "email": "testi.avraham@testprimeflow.com", "phone": "+972501004004", "tags": ["testi-client-vip"]},
+    {"action": "create_contact", "first_name": "testI", "last_name": "Ben David", "email": "testi.bendavid@testprimeflow.com", "phone": "+972501005005", "tags": ["testi-referral"]},
+
+    {"action": "create_template", "name": "TestI - ברוכים הבאים ללקוח חדש", "type": "email", "purpose": "welcome", "business_name": "TestI Digital Solutions", "language": "he", "services": ["SEO", "PPC", "סושיאל", "אוטומציה"], "cta_text": "קבע/י פגישת היכרות", "cta_url": "{{contact.calendar_link}}"},
+    {"action": "create_template", "name": "TestI - מעקב אחרי שיחה", "type": "email", "purpose": "followup", "business_name": "TestI Digital Solutions", "language": "he"},
+    {"action": "create_template", "name": "TestI - אישור פגישה", "type": "email", "purpose": "booking_confirmation", "business_name": "TestI Digital Solutions", "language": "he", "services": ["SEO", "PPC", "סושיאל"]},
+    {"action": "create_template", "name": "TestI - מבצע חודשי", "type": "email", "purpose": "promotion", "business_name": "TestI Digital Solutions", "language": "he", "services": ["SEO", "PPC", "סושיאל", "בניית אתר"], "cta_text": "לפרטים נוספים"},
+    {"action": "create_template", "name": "TestI - עדכון כללי", "type": "email", "purpose": "general", "business_name": "TestI Digital Solutions", "language": "he"},
+
+    {"action": "create_user", "first_name": "TestI", "last_name": "Manager", "email": "testi.manager@testprimeflow.com", "phone": "+972501010101", "role": "admin"},
+    {"action": "create_user", "first_name": "TestI", "last_name": "Sales Rep", "email": "testi.sales@testprimeflow.com", "phone": "+972501010102", "role": "user"},
+    {"action": "create_user", "first_name": "TestI", "last_name": "Support Agent", "email": "testi.support@testprimeflow.com", "phone": "+972501010103", "role": "user"},
+    {"action": "create_user", "first_name": "TestI", "last_name": "Marketing Lead", "email": "testi.marketing@testprimeflow.com", "phone": "+972501010104", "role": "user"},
+    {"action": "create_user", "first_name": "TestI", "last_name": "Account Exec", "email": "testi.ae@testprimeflow.com", "phone": "+972501010105", "role": "user"},
+
+    {
+      "action": "create_custom_object",
+      "labels": {"singular": "TestI Project", "plural": "TestI Projects"},
+      "primaryDisplayPropertyDetails": {"name": "Project Name", "dataType": "TEXT"}
+    },
+    {
+      "action": "create_custom_object",
+      "labels": {"singular": "TestI Invoice", "plural": "TestI Invoices"},
+      "primaryDisplayPropertyDetails": {"name": "Invoice Number", "dataType": "TEXT"}
+    },
+    {
+      "action": "create_custom_object",
+      "labels": {"singular": "TestI Ticket", "plural": "TestI Tickets"},
+      "primaryDisplayPropertyDetails": {"name": "Ticket Title", "dataType": "TEXT"}
+    },
+    {
+      "action": "create_custom_object",
+      "labels": {"singular": "TestI Asset", "plural": "TestI Assets"},
+      "primaryDisplayPropertyDetails": {"name": "Asset Name", "dataType": "TEXT"}
+    },
+    {
+      "action": "create_custom_object",
+      "labels": {"singular": "TestI Campaign", "plural": "TestI Campaigns"},
+      "primaryDisplayPropertyDetails": {"name": "Campaign Name", "dataType": "TEXT"}
+    },
+
+    {
+      "action": "create_association",
+      "key": "testi_projects_to_contact",
+      "firstObjectKey": "contact",
+      "secondObjectKey": "custom_objects.testi_projects",
+      "firstObjectLabel": "Contact",
+      "secondObjectLabel": "TestI Projects",
+      "relationship": "one_to_many"
+    },
+    {
+      "action": "create_association",
+      "key": "testi_invoices_to_contact",
+      "firstObjectKey": "contact",
+      "secondObjectKey": "custom_objects.testi_invoices",
+      "firstObjectLabel": "Contact",
+      "secondObjectLabel": "TestI Invoices",
+      "relationship": "one_to_many"
+    },
+    {
+      "action": "create_association",
+      "key": "testi_tickets_to_contact",
+      "firstObjectKey": "contact",
+      "secondObjectKey": "custom_objects.testi_tickets",
+      "firstObjectLabel": "Contact",
+      "secondObjectLabel": "TestI Tickets",
+      "relationship": "one_to_many"
+    },
+    {
+      "action": "create_association",
+      "key": "testi_assets_to_projects",
+      "firstObjectKey": "custom_objects.testi_projects",
+      "secondObjectKey": "custom_objects.testi_assets",
+      "firstObjectLabel": "TestI Projects",
+      "secondObjectLabel": "TestI Assets",
+      "relationship": "many_to_many"
+    },
+    {
+      "action": "create_association",
+      "key": "testi_campaigns_to_contact",
+      "firstObjectKey": "contact",
+      "secondObjectKey": "custom_objects.testi_campaigns",
+      "firstObjectLabel": "Contact",
+      "secondObjectLabel": "TestI Campaigns",
+      "relationship": "many_to_many"
+    },
+
+    {
+      "action": "create_membership",
+      "title": "TestI - קורס SEO למתחילים",
+      "description": "קורס מקיף ללימוד קידום אתרים אורגני",
+      "categories": [
+        {
+          "title": "מודול 1 - יסודות SEO",
+          "posts": [
+            {"title": "מהו SEO?", "description": "הבנת הבסיס של קידום אורגני", "contentType": "video"},
+            {"title": "מילות מפתח", "description": "מחקר מילות מפתח אפקטיבי", "contentType": "video"},
+            {"title": "SEO טכני", "description": "אופטימיזציה טכנית לאתר", "contentType": "video"}
+          ]
+        },
+        {
+          "title": "מודול 2 - תוכן וקישורים",
+          "posts": [
+            {"title": "כתיבת תוכן SEO", "description": "איך כותבים תוכן שמדורג", "contentType": "video"},
+            {"title": "בניית קישורים", "description": "אסטרטגיות Link Building", "contentType": "video"}
+          ]
+        }
+      ]
+    },
+    {
+      "action": "create_membership",
+      "title": "TestI - מדריך PPC",
+      "description": "מדריך מעשי לפרסום ממומן בגוגל ופייסבוק",
+      "categories": [
+        {
+          "title": "Google Ads",
+          "posts": [
+            {"title": "הקמת חשבון Google Ads", "description": "שלב ראשון בפרסום", "contentType": "video"},
+            {"title": "יצירת קמפיין ראשון", "description": "מהמבנה לביצוע", "contentType": "video"}
+          ]
+        },
+        {
+          "title": "Facebook Ads",
+          "posts": [
+            {"title": "מבנה קמפיין בפייסבוק", "description": "Campaign - Ad Set - Ad", "contentType": "video"},
+            {"title": "טרגוט קהלים", "description": "איך בוחרים קהל יעד", "contentType": "video"}
+          ]
+        }
+      ]
+    },
+    {
+      "action": "create_membership",
+      "title": "TestI - אוטומציה לעסקים",
+      "description": "למד איך לבנות אוטומציות שחוסכות זמן",
+      "categories": [
+        {
+          "title": "מבוא לאוטומציה",
+          "posts": [
+            {"title": "מה זה אוטומציה עסקית?", "description": "הבנת הפוטנציאל", "contentType": "video"},
+            {"title": "כלי אוטומציה מומלצים", "description": "סקירת כלים", "contentType": "video"}
+          ]
+        }
+      ]
+    },
+    {
+      "action": "create_membership",
+      "title": "TestI - סושיאל מדיה מאסטרקלאס",
+      "description": "מדריך מקיף לניהול רשתות חברתיות",
+      "categories": [
+        {
+          "title": "אסטרטגיית תוכן",
+          "posts": [
+            {"title": "תכנון תוכן חודשי", "description": "איך בונים לוח תוכן", "contentType": "video"},
+            {"title": "כתיבת פוסטים שמוכרים", "description": "טכניקות קופירייטינג", "contentType": "video"}
+          ]
+        }
+      ]
+    },
+    {
+      "action": "create_membership",
+      "title": "TestI - אימייל מרקטינג",
+      "description": "בנה מערכת אימיילים שמייצרת מכירות",
+      "categories": [
+        {
+          "title": "בניית רשימת תפוצה",
+          "posts": [
+            {"title": "Lead Magnet אפקטיבי", "description": "איך מושכים נרשמים", "contentType": "video"},
+            {"title": "Welcome Sequence", "description": "רצף אימיילים ראשוני", "contentType": "video"}
+          ]
+        }
+      ]
+    },
+
+    {
+      "action": "create_product",
+      "name": "TestI - חבילת בסיס",
+      "description": "חבילת שיווק דיגיטלי בסיסית - כוללת SEO + סושיאל",
+      "productType": "DIGITAL",
+      "statementDescriptor": "TestI Basic"
+    },
+    {
+      "action": "create_product",
+      "name": "TestI - חבילת צמיחה",
+      "description": "חבילה מורחבת - SEO + PPC + סושיאל + אימייל",
+      "productType": "DIGITAL",
+      "statementDescriptor": "TestI Growth"
+    },
+    {
+      "action": "create_product",
+      "name": "TestI - חבילת פרימיום",
+      "description": "חבילה מלאה כולל מיתוג + בניית אתר + שיווק מלא",
+      "productType": "DIGITAL",
+      "statementDescriptor": "TestI Premium"
+    },
+    {
+      "action": "create_product",
+      "name": "TestI - ייעוץ שעתי",
+      "description": "שעת ייעוץ עסקי ושיווקי אחד על אחד",
+      "productType": "DIGITAL",
+      "statementDescriptor": "TestI Consult"
+    },
+    {
+      "action": "create_product",
+      "name": "TestI - סדנת שיווק",
+      "description": "סדנה קבוצתית בת 3 שעות על שיווק דיגיטלי",
+      "productType": "DIGITAL",
+      "statementDescriptor": "TestI Workshop"
+    },
+
+    {
+      "action": "create_ai_agent",
+      "name": "TestI דנה",
+      "business_name": "TestI Digital Solutions",
+      "niche": "marketing_agency",
+      "language": "he",
+      "mode": "auto-pilot",
+      "goals": "1. להבין את הצורך העסקי של הפונה\n2. לזהות את השירות המתאים ביותר\n3. לאסוף פרטי קשר מלאים\n4. לתאם שיחת היכרות חינמית\n5. לענות על שאלות נפוצות על מחירים ושירותים",
+      "business_brief": "סוכנות דיגיטלית מובילה שמתמחה ב-SEO, PPC, סושיאל, אוטומציה ובניית אתרים. אנחנו עוזרים לעסקים קטנים ובינוניים לצמוח דרך שיווק דיגיטלי מבוסס נתונים. הצוות שלנו כולל 15 מומחים עם ניסיון של 8+ שנים.",
+      "additional_instructions": "תמיד תציע/י שיחת היכרות חינמית. כששואלים על מחיר — תגיד/י שהמחיר תלוי בצרכים ותציע/י שיחה. אל תלחיצ/י. אם הלקוח מתעניין בשירות ספציפי — תפרט/י על אותו שירות בלבד.",
+      "faq": [
+        {"q": "כמה זה עולה?", "a": "החבילות מתחילות מ-2,000 ש\"ח לחודש. המחיר המדויק תלוי בצרכים שלך, בשיחה נבין מה מתאים."},
+        {"q": "כמה זמן לראות תוצאות?", "a": "ב-SEO: 3-6 חודשים. ב-PPC: תוך שבוע. סושיאל: 30-60 יום."},
+        {"q": "עובדים עם עסקים קטנים?", "a": "בהחלט! רוב הלקוחות שלנו הם עסקים קטנים ובינוניים."},
+        {"q": "יש התחייבות?", "a": "ההתחייבות המינימלית היא 3 חודשים, כדי לתת לקמפיינים זמן להניב תוצאות."},
+        {"q": "אתם עושים גם אתרים?", "a": "כן! אנחנו בונים אתרים מותאמים אישית עם דגש על SEO ו-UX."}
+      ],
+      "services": ["SEO - קידום אורגני", "PPC - פרסום ממומן", "ניהול סושיאל מדיה", "אוטומציה עסקית", "בניית אתרים", "מיתוג ועיצוב", "אימייל מרקטינג"],
+      "operating_hours": "א'-ה' 09:00-18:00, ו' 09:00-13:00",
+      "pricing": "בסיס: 2,000 ש\"ח | צמיחה: 4,500 ש\"ח | פרימיום: 8,000 ש\"ח | ייעוץ שעתי: 350 ש\"ח"
+    }
+  ]
+}

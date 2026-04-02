@@ -1,0 +1,68 @@
+{
+  "id": "car_dealer",
+  "name": "Car Dealer / Leasing",
+  "name_he": "סוכנות רכב / ליסינג",
+  "description": "Full CRM setup for car dealerships — lead management tags, custom fields, SMS templates, calendars with notifications, and admin users.",
+  "industries": ["automotive", "car_dealer", "leasing", "car_sales", "רכב", "ליסינג", "סוכנות רכב"],
+  "variables": {
+    "business_name": {"description": "Business name (Hebrew)", "required": true},
+    "owner_name": {"description": "Owner / manager full name", "required": true},
+    "owner_email": {"description": "Owner email address", "required": true},
+    "owner_phone": {"description": "Owner phone number", "required": true},
+    "second_user_name": {"description": "Second team member name", "required": false, "default": ""},
+    "second_user_email": {"description": "Second team member email", "required": false, "default": ""},
+    "second_user_phone": {"description": "Second team member phone", "required": false, "default": ""},
+    "working_hours_start": {"description": "Work start hour (HH:MM)", "required": false, "default": "09:00"},
+    "working_hours_end": {"description": "End hour (HH:MM)", "required": false, "default": "19:00"},
+    "working_days": {"description": "Working days (sun-thu, sun-fri, mon-fri)", "required": false, "default": "sun-thu"}
+  },
+  "commands": [
+    {"action": "create_tag", "name": "ליד חדש"},
+    {"action": "create_tag", "name": "אין מענה"},
+    {"action": "create_tag", "name": "תיאם פגישה"},
+    {"action": "create_tag", "name": "ליד חם"},
+    {"action": "create_tag", "name": "לא רלוונטי"},
+    {"action": "create_tag", "name": "פולו אפ"},
+    {"action": "create_tag", "name": "טסט דרייב"},
+    {"action": "create_tag", "name": "VIP"},
+    {"action": "create_tag", "name": "ליסינג"},
+    {"action": "create_tag", "name": "מימון"},
+
+    {"action": "create_custom_field", "name": "סטטוס ליד", "data_type": "SINGLE_OPTIONS",
+     "options": ["ליד חדש", "אין מענה", "תיאם פגישה", "ליד חם", "לא רלוונטי", "פולו אפ"]},
+    {"action": "create_custom_field", "name": "מתי ביקש לחזור אליו?", "data_type": "DATE"},
+    {"action": "create_custom_field", "name": "דגם רכב מבוקש", "data_type": "TEXT"},
+    {"action": "create_custom_field", "name": "תקציב", "data_type": "MONETORY"},
+    {"action": "create_custom_field", "name": "סוג עסקה", "data_type": "SINGLE_OPTIONS",
+     "options": ["ליסינג", "מימון", "מזומן", "טרייד אין"]},
+    {"action": "create_custom_field", "name": "שנת ייצור מבוקשת", "data_type": "NUMERICAL"},
+    {"action": "create_custom_field", "name": "מקור ליד", "data_type": "SINGLE_OPTIONS",
+     "options": ["אתר", "פייסבוק", "אינסטגרם", "גוגל", "המלצה", "שלט", "אחר"]},
+    {"action": "create_custom_field", "name": "הערות נציג", "data_type": "LARGE_TEXT"},
+
+    {"action": "create_template", "name": "ברוכים הבאים - טופס לידים", "type": "sms",
+     "body": "שלום {{contact.first_name}}, תודה שפנית ל{{business_name}}! 🚗 צוות המכירות שלנו יצור איתך קשר בהקדם. לכל שאלה ניתן להשיב להודעה זו."},
+    {"action": "create_template", "name": "התראת ליד חדש - צוות", "type": "sms",
+     "body": "🔔 ליד חדש נכנס למערכת! שם: {{contact.first_name}} {{contact.last_name}} | טלפון: {{contact.phone}} | מקור: {{contact.source}}"},
+    {"action": "create_template", "name": "תזכורת פולו אפ", "type": "sms",
+     "body": "שלום {{contact.first_name}}, שמנו לב שעדיין לא קבעת פגישה. נשמח לעזור לך למצוא את הרכב המושלם! 🚗 ניתן להשיב להודעה או להתקשר אלינו."},
+    {"action": "create_template", "name": "תזכורת טסט דרייב", "type": "sms",
+     "body": "שלום {{contact.first_name}}, רק מזכירים שיש לך טסט דרייב מתוכנן ב{{business_name}}. מחכים לך! 🔑"},
+    {"action": "create_template", "name": "אישור פגישה", "type": "sms",
+     "body": "שלום {{contact.first_name}}, הפגישה שלך ב{{business_name}} אושרה ✅ לביטול או שינוי - השב להודעה זו."},
+
+    {"action": "create_user", "first_name": "{{owner_first_name}}", "last_name": "{{owner_last_name}}",
+     "email": "{{owner_email}}", "phone": "{{owner_phone}}", "role": "admin"},
+
+    {"action": "create_user", "first_name": "{{second_user_first_name}}", "last_name": "{{second_user_last_name}}",
+     "email": "{{second_user_email}}", "phone": "{{second_user_phone}}", "role": "admin"},
+
+    {"action": "create_calendar", "name": "פגישות {{owner_first_name}}", "calendarType": "personal",
+     "slotDuration": 30, "description": "לוח פגישות אישי - {{owner_first_name}} {{owner_last_name}}",
+     "_availability": {"start": "{{working_hours_start}}", "end": "{{working_hours_end}}", "days": "{{working_days}}"}},
+
+    {"action": "create_calendar", "name": "פגישות {{second_user_first_name}}", "calendarType": "personal",
+     "slotDuration": 30, "description": "לוח פגישות אישי - {{second_user_first_name}} {{second_user_last_name}}",
+     "_availability": {"start": "{{working_hours_start}}", "end": "{{working_hours_end}}", "days": "{{working_days}}"}}
+  ]
+}

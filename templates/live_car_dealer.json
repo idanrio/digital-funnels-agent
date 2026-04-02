@@ -1,0 +1,76 @@
+{
+  "location_id": "gHuEKD6F1mW44PUeXBR4",
+  "api_key": "pit-1b15eb26-a418-4532-af5e-20ab0a47665c",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "סטטוס ליד",
+      "data_type": "SINGLE_OPTIONS",
+      "options": [
+        "ליד חדש",
+        "אין מענה",
+        "תיאם פגישה",
+        "ליד חם",
+        "לא רלוונטי",
+        "פולו אפ"
+      ]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "מתי ביקש לחזור אליו?",
+      "data_type": "DATE"
+    },
+    {
+      "action": "create_tag",
+      "name": "ליד חדש"
+    },
+    {
+      "action": "create_tag",
+      "name": "אין מענה"
+    },
+    {
+      "action": "create_tag",
+      "name": "תיאם פגישה"
+    },
+    {
+      "action": "create_tag",
+      "name": "ליד חם"
+    },
+    {
+      "action": "create_tag",
+      "name": "לא רלוונטי"
+    },
+    {
+      "action": "create_tag",
+      "name": "פולו אפ"
+    },
+    {
+      "action": "create_template",
+      "name": "הודעת ברוכים הבאים - טופס לידים",
+      "type": "sms",
+      "body": "שלום {{contact.first_name}}, תודה שפנית לאלדן בי יציב! 🚗 צוות המכירות שלנו יצור איתך קשר בהקדם. לכל שאלה ניתן להשיב להודעה זו."
+    },
+    {
+      "action": "create_template",
+      "name": "התראת ליד חדש - צוות",
+      "type": "sms",
+      "body": "🔔 ליד חדש נכנס למערכת! שם: {{contact.first_name}} {{contact.last_name}} | טלפון: {{contact.phone}} | מקור: {{contact.source}}"
+    },
+    {
+      "action": "create_user",
+      "first_name": "צחי",
+      "last_name": "לוי",
+      "email": "Wazelease@gmail.com",
+      "phone": "+972533018838",
+      "role": "admin"
+    },
+    {
+      "action": "create_user",
+      "first_name": "אלדן",
+      "last_name": "בי יציב",
+      "email": "eldanb2312@gmail.com",
+      "phone": "+972584254377",
+      "role": "admin"
+    }
+  ]
+}

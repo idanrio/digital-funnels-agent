@@ -1,0 +1,277 @@
+{
+  "location_id": "gHuEKD6F1mW44PUeXBR4",
+  "api_key": "pit-1b15eb26-a418-4532-af5e-20ab0a47665c",
+  "commands": [
+    {
+      "action": "create_calendar",
+      "name": "פגישות - צחי לוי",
+      "description": "יומן פגישות אישי - צחי לוי",
+      "calendarType": "personal",
+      "slotDuration": 30,
+      "slotDurationUnit": "mins",
+      "slotInterval": 30,
+      "slotIntervalUnit": "mins",
+      "slotBuffer": 10,
+      "slotBufferUnit": "mins",
+      "autoConfirm": true,
+      "allowReschedule": true,
+      "allowCancellation": true,
+      "availabilityType": 0,
+      "openHours": [
+        {"daysOfTheWeek": [0], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [1], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [2], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [3], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [4], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]}
+      ],
+      "teamMembers": [
+        {"userId": "jHlImaNdo017INotjMX4", "priority": 1}
+      ],
+      "formSubmitType": "ThankYouMessage",
+      "formSubmitThanksMessage": "תודה! הפגישה נקבעה בהצלחה. נתראה! 🚗"
+    },
+
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "booked",
+      "receiverType": "assignedUser",
+      "body": "פגישה חדשה נקבעה! לקוח: {{contact.name}} | תאריך: {{appointment.start_time}}"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "cancellation",
+      "receiverType": "assignedUser",
+      "body": "פגישה בוטלה. לקוח: {{contact.name}} | תאריך: {{appointment.start_time}}"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reschedule",
+      "receiverType": "assignedUser",
+      "body": "פגישה עודכנה. לקוח: {{contact.name}} | תאריך חדש: {{appointment.start_time}}"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "confirmation",
+      "receiverType": "contact",
+      "body": "שלום {{contact.first_name}}! 🚗\nהפגישה שלך נקבעה בהצלחה.\n📅 תאריך: {{appointment.start_time}}\nנתראה!"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "cancellation",
+      "receiverType": "contact",
+      "body": "שלום {{contact.first_name}},\nהפגישה שלך בוטלה.\nאם ברצונך לקבוע פגישה חדשה, אנחנו כאן בשבילך! 🚗"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reschedule",
+      "receiverType": "contact",
+      "body": "שלום {{contact.first_name}},\nהפגישה שלך עודכנה.\n📅 תאריך חדש: {{appointment.start_time}}\nנתראה!"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת! 🔔\nשלום {{contact.first_name}}, יש לך פגישה מחר.\n📅 {{appointment.start_time}}\nנתראה! 🚗",
+      "beforeTime": [{"timeOffset": 24, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת! 🔔\nשלום {{contact.first_name}}, הפגישה שלך בעוד שעתיים.\n📅 {{appointment.start_time}}\nנתראה בקרוב! 🚗",
+      "beforeTime": [{"timeOffset": 2, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת! ⏰\nשלום {{contact.first_name}}, הפגישה שלך בעוד שעה.\n📅 {{appointment.start_time}}\nנתראה בקרוב! 🚗",
+      "beforeTime": [{"timeOffset": 1, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת אחרונה! ⏰\nשלום {{contact.first_name}}, הפגישה שלך מתחילה בעוד 30 דקות!\n📅 {{appointment.start_time}}\nנתראה! 🚗",
+      "beforeTime": [{"timeOffset": 30, "unit": "mins"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "תזכורת: פגישה מחר עם {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 24, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "תזכורת: פגישה בעוד שעתיים עם {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 2, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "תזכורת: פגישה בעוד שעה עם {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 1, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "⚡ פגישה בעוד 30 דקות! לקוח: {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 30, "unit": "mins"}]
+    },
+
+    {
+      "action": "create_calendar",
+      "name": "פגישות - אלדן בי יציב",
+      "description": "יומן פגישות אישי - אלדן בי יציב",
+      "calendarType": "personal",
+      "slotDuration": 30,
+      "slotDurationUnit": "mins",
+      "slotInterval": 30,
+      "slotIntervalUnit": "mins",
+      "slotBuffer": 10,
+      "slotBufferUnit": "mins",
+      "autoConfirm": true,
+      "allowReschedule": true,
+      "allowCancellation": true,
+      "availabilityType": 0,
+      "openHours": [
+        {"daysOfTheWeek": [0], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [1], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [2], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [3], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]},
+        {"daysOfTheWeek": [4], "hours": [{"openHour": 9, "openMinute": 0, "closeHour": 19, "closeMinute": 0}]}
+      ],
+      "teamMembers": [
+        {"userId": "lmaYN9L74VLQ2morbv8F", "priority": 1}
+      ],
+      "formSubmitType": "ThankYouMessage",
+      "formSubmitThanksMessage": "תודה! הפגישה נקבעה בהצלחה. נתראה! 🚗"
+    },
+
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "booked",
+      "receiverType": "assignedUser",
+      "body": "פגישה חדשה נקבעה! לקוח: {{contact.name}} | תאריך: {{appointment.start_time}}"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "cancellation",
+      "receiverType": "assignedUser",
+      "body": "פגישה בוטלה. לקוח: {{contact.name}} | תאריך: {{appointment.start_time}}"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reschedule",
+      "receiverType": "assignedUser",
+      "body": "פגישה עודכנה. לקוח: {{contact.name}} | תאריך חדש: {{appointment.start_time}}"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "confirmation",
+      "receiverType": "contact",
+      "body": "שלום {{contact.first_name}}! 🚗\nהפגישה שלך נקבעה בהצלחה.\n📅 תאריך: {{appointment.start_time}}\nנתראה!"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "cancellation",
+      "receiverType": "contact",
+      "body": "שלום {{contact.first_name}},\nהפגישה שלך בוטלה.\nאם ברצונך לקבוע פגישה חדשה, אנחנו כאן בשבילך! 🚗"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reschedule",
+      "receiverType": "contact",
+      "body": "שלום {{contact.first_name}},\nהפגישה שלך עודכנה.\n📅 תאריך חדש: {{appointment.start_time}}\nנתראה!"
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת! 🔔\nשלום {{contact.first_name}}, יש לך פגישה מחר.\n📅 {{appointment.start_time}}\nנתראה! 🚗",
+      "beforeTime": [{"timeOffset": 24, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת! 🔔\nשלום {{contact.first_name}}, הפגישה שלך בעוד שעתיים.\n📅 {{appointment.start_time}}\nנתראה בקרוב! 🚗",
+      "beforeTime": [{"timeOffset": 2, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת! ⏰\nשלום {{contact.first_name}}, הפגישה שלך בעוד שעה.\n📅 {{appointment.start_time}}\nנתראה בקרוב! 🚗",
+      "beforeTime": [{"timeOffset": 1, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "whatsapp",
+      "notificationType": "reminder",
+      "receiverType": "contact",
+      "body": "תזכורת אחרונה! ⏰\nשלום {{contact.first_name}}, הפגישה שלך מתחילה בעוד 30 דקות!\n📅 {{appointment.start_time}}\nנתראה! 🚗",
+      "beforeTime": [{"timeOffset": 30, "unit": "mins"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "תזכורת: פגישה מחר עם {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 24, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "תזכורת: פגישה בעוד שעתיים עם {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 2, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "תזכורת: פגישה בעוד שעה עם {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 1, "unit": "hours"}]
+    },
+    {
+      "action": "create_calendar_notification",
+      "channel": "inApp",
+      "notificationType": "reminder",
+      "receiverType": "assignedUser",
+      "body": "⚡ פגישה בעוד 30 דקות! לקוח: {{contact.name}} | {{appointment.start_time}}",
+      "beforeTime": [{"timeOffset": 30, "unit": "mins"}]
+    }
+  ]
+}

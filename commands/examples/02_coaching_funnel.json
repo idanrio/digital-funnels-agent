@@ -1,0 +1,64 @@
+{
+    "action": "create_funnel",
+    "name": "משפך אימון עסקי - לידים",
+    "tags": [
+        "אימון-עסקי",
+        "קורס-דיגיטלי",
+        "משפך-אימון-v1"
+    ],
+    "custom_fields": [
+        {
+            "name": "תחום עיסוק",
+            "data_type": "SINGLE_OPTIONS",
+            "options": ["עצמאי", "עסק קטן", "חברה", "סטארטאפ", "ארגון"]
+        },
+        {
+            "name": "מספר עובדים",
+            "data_type": "SINGLE_OPTIONS",
+            "options": ["1", "2-5", "6-20", "21-50", "50+"]
+        },
+        {
+            "name": "מחזור שנתי",
+            "data_type": "SINGLE_OPTIONS",
+            "options": ["עד 500K", "500K-1M", "1M-5M", "5M-10M", "מעל 10M"]
+        },
+        {
+            "name": "אתגר עיקרי",
+            "data_type": "LARGE_TEXT",
+            "placeholder": "תאר את האתגר העיקרי בעסק שלך"
+        }
+    ],
+    "custom_values": [
+        {"name": "coaching.brand", "value": "PrimeFlow Academy"},
+        {"name": "coaching.tagline", "value": "הצעד הבא שלך לצמיחה עסקית"}
+    ],
+    "templates": [
+        {
+            "type": "email",
+            "name": "הרשמה לוובינר - אימון עסקי",
+            "subject": "נרשמת בהצלחה לוובינר! 🎯",
+            "html": "<div dir='rtl' style='font-family: Arial; text-align: right; max-width: 600px; margin: 0 auto;'><div style='background: #7c3aed; padding: 30px; border-radius: 12px 12px 0 0; text-align: center;'><h1 style='color: white;'>נרשמת בהצלחה! 🎯</h1><p style='color: #e0d5f5; font-size: 18px;'>הוובינר מתחיל בקרוב</p></div><div style='padding: 30px; background: #faf5ff;'><p>שלום {{contact.first_name}},</p><p>תודה שנרשמת לוובינר <strong>\"5 צעדים להכפלת ההכנסות\"</strong>.</p><p><strong>פרטי הוובינר:</strong></p><ul><li>📅 יום שלישי הקרוב, 20:00</li><li>⏱️ משך: 90 דקות</li><li>🎁 בונוס: מדריך PDF חינמי למשתתפים</li></ul><p style='color: #6b21a8;'>צוות PrimeFlow Academy</p></div></div>"
+        },
+        {
+            "type": "sms",
+            "name": "תזכורת וובינר",
+            "body": "שלום {{contact.first_name}}! תזכורת: הוובינר שלנו מתחיל היום ב-20:00. קישור לצפייה: {{coaching.webinar_link}} - PrimeFlow Academy"
+        }
+    ],
+    "contacts": [
+        {
+            "first_name": "שרון",
+            "last_name": "גולדברג",
+            "email": "sharon.g@example.co.il",
+            "phone": "+972504444444",
+            "tags": ["אימון-עסקי", "קורס-דיגיטלי"]
+        },
+        {
+            "first_name": "עמית",
+            "last_name": "שפירא",
+            "email": "amit.s@example.co.il",
+            "phone": "+972505555555",
+            "tags": ["אימון-עסקי", "קורס-דיגיטלי"]
+        }
+    ]
+}

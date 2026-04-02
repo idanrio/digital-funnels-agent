@@ -1,0 +1,86 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "FullTest - Budget",
+      "data_type": "MONETARY",
+      "placeholder": "Amount in NIS"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "FullTest - Property Type",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["Apartment", "Villa", "Penthouse"]
+    },
+    {
+      "action": "create_tag",
+      "name": "fulltest-new-lead"
+    },
+    {
+      "action": "create_tag",
+      "name": "fulltest-qualified"
+    },
+    {
+      "action": "create_tag",
+      "name": "fulltest-client"
+    },
+    {
+      "action": "create_calendar",
+      "name": "FullTest - Property Tour",
+      "description": "30-minute property tour",
+      "calendarType": "event",
+      "slotDuration": 30,
+      "slotInterval": 30
+    },
+    {
+      "action": "create_contact",
+      "first_name": "FullTest Avi",
+      "last_name": "Cohen",
+      "email": "fulltest.avi@testprimeflow.com",
+      "phone": "+97250500001",
+      "tags": ["fulltest-new-lead"],
+      "source": "Google Ads",
+      "companyName": "Cohen Properties"
+    },
+    {
+      "action": "create_contact",
+      "first_name": "FullTest Dana",
+      "last_name": "Levi",
+      "email": "fulltest.dana@testprimeflow.com",
+      "phone": "+97252500002",
+      "tags": ["fulltest-qualified"],
+      "source": "Facebook",
+      "companyName": "Levi Interiors"
+    },
+    {
+      "action": "create_template",
+      "name": "FullTest - Welcome Email",
+      "type": "email",
+      "subject": "Welcome to FullTest Real Estate",
+      "html": "<html><body><h1>Welcome {{contact.first_name}}</h1><p>Thank you for reaching out.</p></body></html>"
+    },
+    {
+      "action": "create_template",
+      "name": "FullTest - Welcome SMS",
+      "type": "sms",
+      "body": "Hi {{contact.first_name}}, thanks for contacting FullTest Real Estate!"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.fulltest.name",
+      "value": "FullTest Real Estate"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.fulltest.phone",
+      "value": "03-1111111"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.fulltest.hours",
+      "value": "Sun-Thu 09:00-17:00"
+    }
+  ]
+}

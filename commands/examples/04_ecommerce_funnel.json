@@ -1,0 +1,56 @@
+{
+    "action": "create_funnel",
+    "name": "משפך חנות אונליין - מכירות",
+    "tags": [
+        "חנות-אונליין",
+        "מכירות",
+        "ecommerce-v1"
+    ],
+    "custom_fields": [
+        {
+            "name": "קטגוריית מוצר",
+            "data_type": "SINGLE_OPTIONS",
+            "options": ["אלקטרוניקה", "אופנה", "בית וגן", "ספורט", "יופי ובריאות", "אחר"]
+        },
+        {
+            "name": "סכום רכישה אחרונה",
+            "data_type": "MONETORY"
+        },
+        {
+            "name": "תאריך רכישה אחרונה",
+            "data_type": "DATE"
+        },
+        {
+            "name": "מועדון VIP",
+            "data_type": "CHECKBOX"
+        }
+    ],
+    "custom_values": [
+        {"name": "shop.name", "value": "PrimeShop"},
+        {"name": "shop.url", "value": "https://shop.primeflow.co.il"},
+        {"name": "shop.support_email", "value": "support@primeshop.co.il"}
+    ],
+    "templates": [
+        {
+            "type": "email",
+            "name": "אישור הזמנה - חנות",
+            "subject": "ההזמנה שלך אושרה! 🛒",
+            "html": "<div dir='rtl' style='font-family: Arial; text-align: right; max-width: 600px; margin: 0 auto;'><div style='background: #059669; padding: 25px; border-radius: 12px 12px 0 0; text-align: center;'><h1 style='color: white;'>ההזמנה אושרה! ✅</h1></div><div style='padding: 30px; background: #ecfdf5;'><p>שלום {{contact.first_name}},</p><p>ההזמנה שלך ב-PrimeShop התקבלה בהצלחה.</p><p><strong>מספר הזמנה:</strong> {{order.id}}</p><p>המשלוח צפוי להגיע תוך 3-5 ימי עסקים.</p><p>לשאלות: {{shop.support_email}}</p></div></div>"
+        },
+        {
+            "type": "sms",
+            "name": "אישור הזמנה SMS",
+            "body": "שלום {{contact.first_name}}! ההזמנה שלך ב-PrimeShop אושרה. מספר הזמנה: {{order.id}}. משלוח תוך 3-5 ימי עסקים."
+        }
+    ],
+    "products": [
+        {
+            "name": "חבילת Premium",
+            "description": "חבילת Premium - גישה מלאה לכל המוצרים",
+            "product_type": "DIGITAL",
+            "price": 9900,
+            "currency": "ILS",
+            "price_name": "מחיר Premium חודשי"
+        }
+    ]
+}

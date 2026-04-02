@@ -1,0 +1,113 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "סטטוס פנייה",
+      "fieldKey": "contact.testg_inquiry_status",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["פנייה חדשה", "בטיפול", "הוצעה פגישה", "נקבעה פגישה", "הסתיים"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "תקציב משוער",
+      "fieldKey": "contact.testg_budget",
+      "data_type": "MONETORY",
+      "placeholder": "תקציב בשקלים"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "סוג שירות מבוקש",
+      "fieldKey": "contact.testg_service_type",
+      "data_type": "MULTIPLE_OPTIONS",
+      "options": ["ייעוץ עסקי", "שיווק דיגיטלי", "בניית אתר", "מיתוג", "אוטומציה"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "הערות מהשיחה",
+      "fieldKey": "contact.testg_chat_notes",
+      "data_type": "LARGE_TEXT",
+      "placeholder": "סיכום שיחה עם הלקוח"
+    },
+    {
+      "action": "create_tag",
+      "name": "testg-lead-new"
+    },
+    {
+      "action": "create_tag",
+      "name": "testg-lead-qualified"
+    },
+    {
+      "action": "create_tag",
+      "name": "testg-client-active"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.testg_brand_promise",
+      "value": "אנחנו הופכים את השיווק שלך מהוצאה להשקעה"
+    },
+    {
+      "action": "create_custom_value",
+      "name": "company.testg_phone",
+      "value": "03-9876543"
+    },
+    {
+      "action": "create_contact",
+      "first_name": "testG",
+      "last_name": "Dahan",
+      "email": "testg.dahan@testprimeflow.com",
+      "phone": "+972505001001",
+      "tags": ["testg-lead-new"]
+    },
+    {
+      "action": "create_contact",
+      "first_name": "testG",
+      "last_name": "Elias",
+      "email": "testg.elias@testprimeflow.com",
+      "phone": "+972505002002",
+      "tags": ["testg-lead-qualified"]
+    },
+    {
+      "action": "create_calendar",
+      "name": "TestG - שיחת היכרות חינמית",
+      "description": "שיחת היכרות של 20 דקות ללקוחות חדשים",
+      "calendarType": "event",
+      "slotDuration": 20,
+      "slotInterval": 10
+    },
+    {
+      "action": "create_calendar",
+      "name": "TestG - פגישת אסטרטגיה",
+      "description": "פגישה מעמיקה של 45 דקות לבניית תוכנית עבודה",
+      "calendarType": "event",
+      "slotDuration": 45,
+      "slotInterval": 15
+    },
+    {
+      "action": "create_ai_agent",
+      "name": "נועם",
+      "business_name": "TestG Growth Agency",
+      "niche": "coaching",
+      "language": "he",
+      "mode": "auto-pilot",
+      "goals": "1. להבין מה האתגר העסקי של הפונה\n2. לזהות איזה שירות מתאים לו\n3. לאסוף פרטי קשר ומידע רלוונטי\n4. לתאם שיחת היכרות חינמית",
+      "business_brief": "סוכנות צמיחה לעסקים קטנים ובינוניים. אנחנו עוזרים לבעלי עסקים לבנות מערכת שיווק שעובדת ומביאה לידים באופן קבוע. הגישה שלנו היא פרקטית — לא גורואים, לא הבטחות ריקות. פשוט מערכות שעובדות.",
+      "additional_instructions": "כשהלקוח שואל על מחיר — תגיד שזה תלוי בצרכים ותציע שיחת היכרות. אם שואלים שאלות טכניות מאוד — תגיד שזה בדיוק מה שנעבור עליו בשיחה. אל תלחיץ. תן ללקוח לדבר.",
+      "faq": [
+        {"q": "כמה זה עולה?", "a": "החבילות מתחילות מ-2,500 ש\"ח בחודש. המחיר המדויק תלוי בצרכים, בשיחה נבין מה מתאים."},
+        {"q": "כמה זמן לוקח לראות תוצאות?", "a": "רוב הלקוחות רואים שינוי ב-60-90 יום. אבל זה תלוי בתחום ובמצב הנוכחי."},
+        {"q": "אתם עובדים עם עסקים קטנים?", "a": "בהחלט, רוב הלקוחות שלנו הם עסקים קטנים ובינוניים. זה בדיוק ההתמחות שלנו."}
+      ],
+      "operating_hours": "א'-ה' 09:00-18:00, שישי 09:00-13:00",
+      "services": [
+        "ייעוץ עסקי ואסטרטגיה",
+        "שיווק דיגיטלי וקמפיינים",
+        "בניית אתרים ודפי נחיתה",
+        "מיתוג ועיצוב",
+        "אוטומציה עסקית"
+      ],
+      "pricing": "חבילת בסיס: 2,500 ש\"ח/חודש | חבילת צמיחה: 5,000 ש\"ח/חודש | חבילת פרימיום: 8,500 ש\"ח/חודש"
+    }
+  ]
+}

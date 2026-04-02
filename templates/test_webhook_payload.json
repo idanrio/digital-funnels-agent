@@ -1,0 +1,9 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {"action": "create_tag", "name": "webhook-test-tag"},
+    {"action": "create_custom_value", "name": "company.webhook.test", "value": "Hello from webhook"}
+  ],
+  "source": "external-website-test"
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "action": "create_tags",
+        "tags": ["vip", "premium", "batch-test"]
+    },
+    {
+        "action": "create_custom_field",
+        "name": "Lead Score",
+        "data_type": "NUMERICAL"
+    },
+    {
+        "action": "create_contact",
+        "first_name": "Batch",
+        "last_name": "Test User",
+        "email": "batch.test@primeflow.test",
+        "phone": "+972506666666",
+        "tags": ["batch-test"]
+    },
+    {
+        "action": "create_template",
+        "type": "email",
+        "name": "Batch Test Email",
+        "subject": "Welcome from Batch",
+        "html": "<h1>Hello from PrimeFlow Batch Engine!</h1>"
+    }
+]

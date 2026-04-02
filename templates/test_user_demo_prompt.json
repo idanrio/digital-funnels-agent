@@ -1,0 +1,181 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "תקציב רכישה",
+      "data_type": "MONETORY",
+      "placeholder": "סכום בשקלים"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "אזור מבוקש",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["צפון", "מרכז", "דרום", "ירושלים", "שרון", "שפלה"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "סוג נכס",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["דירה", "פנטהאוז", "קוטג'", "וילה", "מגרש", "מסחרי"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "מספר חדרים",
+      "data_type": "NUMERICAL",
+      "placeholder": "מספר חדרים"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "תאריך שיחת דמו",
+      "data_type": "DATE"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "הערות מפגישה",
+      "data_type": "LARGE_TEXT",
+      "placeholder": "סיכום השיחה עם הלקוח"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "מקור ליד",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["Google", "Facebook", "Instagram", "הפניה", "אתר", "אחר"]
+    },
+    {
+      "action": "create_tag",
+      "name": "ליד-חדש"
+    },
+    {
+      "action": "create_tag",
+      "name": "ליד-חם"
+    },
+    {
+      "action": "create_tag",
+      "name": "ליד-קר"
+    },
+    {
+      "action": "create_tag",
+      "name": "נקבעה-פגישה"
+    },
+    {
+      "action": "create_tag",
+      "name": "לאחר-דמו"
+    },
+    {
+      "action": "create_tag",
+      "name": "מתעניין-פעיל"
+    },
+    {
+      "action": "create_tag",
+      "name": "לקוח-סגור"
+    },
+    {
+      "action": "create_tag",
+      "name": "אבוד"
+    },
+    {
+      "action": "create_user",
+      "first_name": "John",
+      "last_name": "Worker",
+      "email": "john@primeflow.ai",
+      "password": "PrimeFlow2026!",
+      "role": "user",
+      "type": "account",
+      "company_id": "0ryDxpttZ3SBRNMgXp57",
+      "locationIds": ["0ryDxpttZ3SBRNMgXp57"],
+      "permissions": {
+        "campaignsEnabled": true,
+        "contactsEnabled": true,
+        "opportunitiesEnabled": true,
+        "dashboardStatsEnabled": true
+      }
+    },
+    {
+      "action": "create_user",
+      "first_name": "Betty",
+      "last_name": "Worker",
+      "email": "betty@primeflow.ai",
+      "password": "PrimeFlow2026!",
+      "role": "user",
+      "type": "account",
+      "company_id": "0ryDxpttZ3SBRNMgXp57",
+      "locationIds": ["0ryDxpttZ3SBRNMgXp57"],
+      "permissions": {
+        "campaignsEnabled": true,
+        "contactsEnabled": true,
+        "opportunitiesEnabled": true,
+        "dashboardStatsEnabled": true
+      }
+    },
+    {
+      "action": "create_user",
+      "first_name": "Mike",
+      "last_name": "Worker",
+      "email": "mike@primeflow.ai",
+      "password": "PrimeFlow2026!",
+      "role": "user",
+      "type": "account",
+      "company_id": "0ryDxpttZ3SBRNMgXp57",
+      "locationIds": ["0ryDxpttZ3SBRNMgXp57"],
+      "permissions": {
+        "campaignsEnabled": true,
+        "contactsEnabled": true,
+        "opportunitiesEnabled": true,
+        "dashboardStatsEnabled": true
+      }
+    },
+    {
+      "action": "create_calendar",
+      "name": "פגישת צוות",
+      "description": "לוח שנה לפגישות צוות פנימיות",
+      "calendarType": "event",
+      "slotDuration": 120,
+      "slotInterval": 30
+    },
+    {
+      "action": "create_calendar",
+      "name": "שיחת דמו עם לידים",
+      "description": "שיחות דמו עם לידים חדשים — 30 דקות",
+      "calendarType": "event",
+      "slotDuration": 30,
+      "slotInterval": 15
+    },
+    {
+      "action": "create_ai_agent",
+      "name": "סוכן נדל\"ן PrimeFlow",
+      "business_name": "PrimeFlow נדל\"ן",
+      "mode": "auto_reply",
+      "personality": "אתה סוכן נדל\"ן מקצועי ואדיב. אתה מדבר בעברית בלבד, בטון חם ומקצועי. אתה כותב הודעות קצרות של 1-3 משפטים. אתה מקשיב לצרכים של הלקוח לפני שאתה מציע פתרונות.",
+      "goal": "1. להבין מה הלקוח מחפש — סוג נכס, אזור, תקציב, מספר חדרים\n2. לענות על שאלות בסיסיות על נדל\"ן ותהליך הרכישה\n3. להמיר את הליד לפגישת דמו — לגרום לו לקבוע שיחה בלוח 'שיחת דמו עם לידים'\n4. לאסוף פרטי קשר: שם, טלפון, מייל",
+      "instructions": "- כתוב תמיד בעברית\n- הודעות קצרות, 1-3 משפטים מקסימום\n- שאל שאלה אחת בכל פעם\n- אם הלקוח מתעניין — הצע מיד לקבוע שיחת דמו\n- אם שואלים על מחירים ספציפיים — הפנה לשיחת דמו עם מומחה\n- אל תמציא נכסים או מחירים\n- בסוף כל שיחה נסה לסגור על פגישת דמו"
+    },
+    {
+      "action": "create_custom_object",
+      "name": "ניהול מכירות",
+      "key": "sales_management",
+      "description": "אובייקט לניהול מכירות ועסקאות נדל\"ן"
+    },
+    {
+      "action": "create_custom_object",
+      "name": "ניהול לקוחות",
+      "key": "clients_management",
+      "description": "אובייקט לניהול לקוחות ופרטיהם"
+    },
+    {
+      "action": "create_association",
+      "key": "sales_to_contact",
+      "firstObjectKey": "custom_objects.sales_management",
+      "secondObjectKey": "contact",
+      "hasMany": false
+    },
+    {
+      "action": "create_association",
+      "key": "clients_to_contact",
+      "firstObjectKey": "custom_objects.clients_management",
+      "secondObjectKey": "contact",
+      "hasMany": false
+    }
+  ]
+}

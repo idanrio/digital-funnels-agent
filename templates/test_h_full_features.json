@@ -1,0 +1,144 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-7b43740b-92ef-4a47-90f2-5d1a7f734b36",
+  "commands": [
+    {
+      "action": "create_custom_field",
+      "name": "סטטוס ליד",
+      "fieldKey": "contact.testh_lead_status",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["ליד חדש", "בתהליך", "מתעניין", "לקוח"]
+    },
+    {
+      "action": "create_custom_field",
+      "name": "תקציב חודשי",
+      "fieldKey": "contact.testh_monthly_budget",
+      "data_type": "MONETORY"
+    },
+    {
+      "action": "create_custom_field",
+      "name": "מקור הפנייה",
+      "fieldKey": "contact.testh_referral_source",
+      "data_type": "SINGLE_OPTIONS",
+      "options": ["פייסבוק", "גוגל", "המלצה", "אתר", "אחר"]
+    },
+    {
+      "action": "create_tag",
+      "name": "testh-new-lead"
+    },
+    {
+      "action": "create_tag",
+      "name": "testh-vip-client"
+    },
+    {
+      "action": "create_calendar",
+      "name": "TestH - שיחת ייעוץ חינמית",
+      "description": "שיחת ייעוץ ראשונית של 30 דקות בחינם",
+      "calendarType": "event",
+      "slotDuration": 30
+    },
+    {
+      "action": "create_contact",
+      "first_name": "testH",
+      "last_name": "Cohen",
+      "email": "testh.cohen@testprimeflow.com",
+      "phone": "+972509001001",
+      "tags": ["testh-new-lead"]
+    },
+    {
+      "action": "create_template",
+      "name": "TestH - ברוכים הבאים",
+      "type": "email",
+      "purpose": "welcome",
+      "business_name": "TestH Digital Agency",
+      "language": "he",
+      "services": ["שיווק דיגיטלי", "בניית אתרים", "אוטומציה"],
+      "cta_text": "קבע/י שיחה חינמית",
+      "cta_url": "{{contact.calendar_link}}"
+    },
+    {
+      "action": "create_template",
+      "name": "TestH - Follow Up",
+      "type": "email",
+      "purpose": "followup",
+      "business_name": "TestH Digital Agency",
+      "language": "he"
+    },
+    {
+      "action": "create_custom_object",
+      "labels": {
+        "singular": "TestH Transaction",
+        "plural": "TestH Transactions"
+      },
+      "primaryDisplayPropertyDetails": {
+        "name": "Transaction Name",
+        "dataType": "TEXT",
+        "position": 0
+      }
+    },
+    {
+      "action": "create_association",
+      "key": "testh_transactions_to_contact",
+      "firstObjectKey": "contact",
+      "secondObjectKey": "custom_objects.testh_transactions",
+      "firstObjectLabel": "TestH Contact",
+      "secondObjectLabel": "TestH Transactions",
+      "relationship": "one_to_many"
+    },
+    {
+      "action": "create_membership",
+      "title": "TestH - קורס שיווק דיגיטלי",
+      "description": "קורס מקיף ללימוד שיווק דיגיטלי לעסקים קטנים",
+      "categories": [
+        {
+          "title": "מודול 1 - יסודות",
+          "posts": [
+            {
+              "title": "שיעור 1 - מבוא לשיווק דיגיטלי",
+              "description": "הבנת הבסיס של שיווק דיגיטלי",
+              "contentType": "video"
+            },
+            {
+              "title": "שיעור 2 - הגדרת קהל יעד",
+              "description": "איך מגדירים קהל יעד נכון",
+              "contentType": "video"
+            }
+          ]
+        },
+        {
+          "title": "מודול 2 - קמפיינים",
+          "posts": [
+            {
+              "title": "שיעור 3 - קמפיינים בפייסבוק",
+              "description": "יצירת קמפיינים מנצחים",
+              "contentType": "video"
+            },
+            {
+              "title": "שיעור 4 - קמפיינים בגוגל",
+              "description": "Google Ads למתחילים",
+              "contentType": "video"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "action": "create_ai_agent",
+      "name": "רונית",
+      "business_name": "TestH Digital Agency",
+      "niche": "coaching",
+      "language": "he",
+      "mode": "auto-pilot",
+      "goals": "1. לזהות את הצורך העסקי של הפונה\n2. לאסוף פרטי קשר ומידע רלוונטי\n3. לתאם שיחת ייעוץ חינמית\n4. לענות על שאלות נפוצות",
+      "business_brief": "סוכנות דיגיטלית שמתמחה בשיווק ואוטומציה לעסקים קטנים. אנחנו עוזרים לבעלי עסקים להגדיל הכנסות ולחסוך זמן.",
+      "faq": [
+        {"q": "כמה זה עולה?", "a": "החבילות מתחילות מ-1,500 ש\"ח. נדבר על מה מתאים לך בשיחה."},
+        {"q": "כמה זמן לוקח לראות תוצאות?", "a": "רוב הלקוחות רואים שינוי ב-30-60 יום."},
+        {"q": "אתם עובדים עם עסקים קטנים?", "a": "בהחלט, זו ההתמחות שלנו."}
+      ],
+      "services": ["שיווק דיגיטלי", "בניית אתרים", "אוטומציה עסקית", "ניהול רשתות חברתיות"],
+      "operating_hours": "א'-ה' 09:00-18:00",
+      "pricing": "בסיס: 1,500 ש\"ח | צמיחה: 3,500 ש\"ח | פרימיום: 6,000 ש\"ח"
+    }
+  ]
+}
