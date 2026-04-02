@@ -1,0 +1,64 @@
+{
+  "location_id": "0ryDxpttZ3SBRNMgXp57",
+  "api_key": "pit-2efeee3b-ab84-4213-ac91-87c71b517579",
+  "commands": [
+
+    {"action": "create_custom_field", "name": "סטטוס ליד Z", "fieldKey": "contact.test_z_lead_status", "data_type": "SINGLE_OPTIONS", "options": ["ליד חדש", "פנייה ראשונה", "מתעניין", "סגירה", "לא רלוונטי"]},
+    {"action": "create_custom_field", "name": "תקציב Z", "fieldKey": "contact.test_z_budget", "data_type": "MONETORY"},
+    {"action": "create_custom_field", "name": "סוג שירות Z", "fieldKey": "contact.test_z_service_type", "data_type": "SINGLE_OPTIONS", "options": ["ייעוץ", "בנייה", "תחזוקה", "חבילה מלאה"]},
+    {"action": "create_custom_field", "name": "תאריך פגישה Z", "fieldKey": "contact.test_z_meeting_date", "data_type": "DATE"},
+    {"action": "create_custom_field", "name": "הערות נציג Z", "fieldKey": "contact.test_z_agent_notes", "data_type": "LARGE_TEXT"},
+    {"action": "create_custom_field", "name": "דירוג ליד Z", "fieldKey": "contact.test_z_lead_rating", "data_type": "NUMERICAL"},
+    {"action": "create_custom_field", "name": "מקור פנייה Z", "fieldKey": "contact.test_z_lead_source", "data_type": "SINGLE_OPTIONS", "options": ["גוגל", "פייסבוק", "אינסטגרם", "המלצה", "אתר", "אחר"]},
+
+    {"action": "create_tag", "name": "test-z-new-lead"},
+    {"action": "create_tag", "name": "test-z-hot"},
+    {"action": "create_tag", "name": "test-z-booked"},
+    {"action": "create_tag", "name": "test-z-closed-won"},
+    {"action": "create_tag", "name": "test-z-closed-lost"},
+    {"action": "create_tag", "name": "test-z-vip"},
+    {"action": "create_tag", "name": "test-z-follow-up"},
+    {"action": "create_tag", "name": "test-z-no-answer"},
+
+    {"action": "create_user", "first_name": "טסט", "last_name": "זד-מנהל", "email": "testz-manager@primeflow-test.com", "role": "admin", "phone": "+972501110001"},
+    {"action": "create_user", "first_name": "טסט", "last_name": "זד-נציג", "email": "testz-rep@primeflow-test.com", "role": "user", "phone": "+972501110002"},
+
+    {"action": "create_calendar", "name": "טסט Z - פגישת ייעוץ ראשונית", "description": "פגישת ייעוץ ראשונית ללידים חדשים", "calendarType": "event", "slotDuration": 30, "slotInterval": 15},
+    {"action": "create_calendar", "name": "טסט Z - שיחת סגירה", "description": "שיחת סגירה ללידים חמים", "calendarType": "event", "slotDuration": 45, "slotInterval": 15},
+    {"action": "create_calendar", "name": "טסט Z - פגישת צוות", "description": "פגישת צוות שבועית", "calendarType": "event", "slotDuration": 60, "slotInterval": 30},
+
+    {"action": "create_contact", "first_name": "יוסי", "last_name": "כהן-טסט-Z", "email": "yossi-testz@primeflow-test.com", "phone": "+972502220001", "tags": ["test-z-new-lead", "test-z-hot"], "source": "Test Z - Google", "companyName": "כהן בע\"מ"},
+    {"action": "create_contact", "first_name": "שרה", "last_name": "לוי-טסט-Z", "email": "sarah-testz@primeflow-test.com", "phone": "+972502220002", "tags": ["test-z-new-lead"], "source": "Test Z - Facebook", "companyName": "לוי נכסים"},
+    {"action": "create_contact", "first_name": "דוד", "last_name": "מזרחי-טסט-Z", "email": "david-testz@primeflow-test.com", "phone": "+972502220003", "tags": ["test-z-vip", "test-z-booked"], "source": "Test Z - Referral", "companyName": "מזרחי טכנולוגיות"},
+
+    {"action": "create_ai_agent", "name": "טסט Z - סוכן AI", "business_name": "PrimeFlow Test Z", "model": "gpt-4", "language": "he"},
+
+    {"action": "create_knowledge_base", "name": "טסט Z - בסיס ידע"},
+
+    {"action": "create_template", "name": "טסט Z - ברוכים הבאים SMS", "type": "sms", "body": "שלום {{contact.first_name}}, תודה שפנית ל-PrimeFlow Test Z! הצוות שלנו יחזור אליך תוך 24 שעות."},
+    {"action": "create_template", "name": "טסט Z - תזכורת פגישה SMS", "type": "sms", "body": "היי {{contact.first_name}}, רק מזכירים שיש לך פגישה מחר עם הצוות שלנו. מחכים לך!"},
+    {"action": "create_template", "name": "טסט Z - פולואפ SMS", "type": "sms", "body": "שלום {{contact.first_name}}, ניסינו להשיג אותך ולא הצלחנו. נשמח לשמוע ממך כשנוח לך."},
+    {"action": "create_template", "name": "טסט Z - התראת ליד צוות SMS", "type": "sms", "body": "ליד חדש! שם: {{contact.first_name}} {{contact.last_name}} | טלפון: {{contact.phone}} | מקור: {{contact.source}}"},
+    {"action": "create_template", "name": "טסט Z - ברוכים הבאים Email", "type": "email", "subject": "ברוכים הבאים ל-PrimeFlow Test Z!", "html": "<html><body dir='rtl' style='font-family:Arial,sans-serif;text-align:right;'><h2>שלום {{contact.first_name}},</h2><p>תודה שפנית אלינו! אנחנו שמחים שבחרת ב-PrimeFlow Test Z.</p><p>הצוות שלנו יצור איתך קשר בהקדם האפשרי כדי לתאם פגישת ייעוץ ראשונית.</p><br/><p>בברכה,<br/>צוות PrimeFlow Test Z</p></body></html>"},
+    {"action": "create_template", "name": "טסט Z - סיכום פגישה Email", "type": "email", "subject": "סיכום הפגישה שלנו - PrimeFlow Test Z", "html": "<html><body dir='rtl' style='font-family:Arial,sans-serif;text-align:right;'><h2>היי {{contact.first_name}},</h2><p>תודה על הפגישה היום! הנה סיכום קצר של מה שדיברנו:</p><ul><li>סוג שירות: ייעוץ מקיף</li><li>צעדים הבאים: נחזור אליך תוך 48 שעות עם הצעת מחיר</li></ul><p>לכל שאלה, אל תהסס לפנות אלינו.</p><br/><p>בברכה,<br/>צוות PrimeFlow Test Z</p></body></html>"},
+
+    {"action": "create_custom_value", "name": "company.testz.name", "value": "PrimeFlow Test Z"},
+    {"action": "create_custom_value", "name": "company.testz.phone", "value": "03-7777777"},
+    {"action": "create_custom_value", "name": "company.testz.email", "value": "testz@primeflow.ai"},
+    {"action": "create_custom_value", "name": "company.testz.address", "value": "רחוב הרצל 100, תל אביב"},
+    {"action": "create_custom_value", "name": "company.testz.website", "value": "https://test-z.primeflow.ai"},
+    {"action": "create_custom_value", "name": "company.testz.hours", "value": "א-ה 09:00-18:00"},
+    {"action": "create_custom_value", "name": "company.testz.slogan", "value": "המשפך הדיגיטלי המושלם"},
+
+    {"action": "create_opportunity", "pipeline_id": "RClnYZ2SxvK3BNkdRYCp", "stage_id": "1ca79e46-7c6f-4dd6-9aa5-203d81a4391a", "name": "טסט Z - יוסי כהן עסקה", "contact_email": "yossi-testz@primeflow-test.com", "monetary_value": 5500, "status": "open"},
+    {"action": "create_opportunity", "pipeline_id": "RClnYZ2SxvK3BNkdRYCp", "stage_id": "183ebb72-8277-4bab-b2c0-b268517d4c08", "name": "טסט Z - שרה לוי עסקה", "contact_email": "sarah-testz@primeflow-test.com", "monetary_value": 12000, "status": "open"},
+    {"action": "create_opportunity", "pipeline_id": "RClnYZ2SxvK3BNkdRYCp", "stage_id": "d5bf10e6-6ca1-4f51-b1ec-fb5378dd042f", "name": "טסט Z - דוד מזרחי עסקה", "contact_email": "david-testz@primeflow-test.com", "monetary_value": 25000, "status": "open"},
+
+    {"action": "create_product", "name": "טסט Z - חבילת בסיס", "description": "חבילת בסיס - אתר + משפך פשוט", "productType": "DIGITAL"},
+    {"action": "create_product", "name": "טסט Z - חבילת פרימיום", "description": "חבילת פרימיום - אתר + משפך + אוטומציות + AI", "productType": "DIGITAL"},
+
+    {"action": "create_business", "name": "טסט Z - PrimeFlow Digital", "phone": "+972537777777", "email": "testz-biz@primeflow.ai", "website": "https://test-z.primeflow.ai"},
+
+    {"action": "create_link", "name": "טסט Z - קישור דף נחיתה", "redirect_to": "https://test-z.primeflow.ai/landing"}
+  ]
+}
