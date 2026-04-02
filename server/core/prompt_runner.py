@@ -639,9 +639,10 @@ class PromptRunner:
 
     @staticmethod
     def _send_approval_email(
-        pending_id: str, email_html: str, location_name: str = ""
+        pending_id: str, email_html: str, location_name: str = "",
+        commands_summary: str = "",
     ) -> bool:
-        """Send the approval email via SMTP."""
+        """Send the approval email via SMTP with plain text fallback for Gmail deliverability."""
         smtp_host = os.environ.get("SMTP_HOST", "smtp.gmail.com")
         smtp_port = int(os.environ.get("SMTP_PORT", "587"))
         smtp_user = os.environ.get("SMTP_USER", "")
@@ -653,13 +654,27 @@ class PromptRunner:
 
         try:
             msg = MIMEMultipart("alternative")
-            msg["From"] = "support@primeflow.ai"
+            msg["From"] = "PrimeFlow AI <support@primeflow.ai>"
             msg["To"] = ADMIN_EMAIL
             loc_label = f" {location_name} —" if location_name else ""
-            msg["Subject"] = f"🔒 PrimeFlow Approval —{loc_label} {pending_id}"
+            msg["Subject"] = f"PrimeFlow Run Approval Required —{loc_label} {pending_id}"
 
-            html_part = MIMEText(email_html, "html", "utf-8")
-            msg.attach(html_part)
+            # Plain text version (critical for Gmail inbox delivery)
+            approve_url = f"{SERVER_URL}/api/approve-run/{pending_id}"
+            reject_url = f"{SERVER_URL}/api/reject-run/{pending_id}"
+            plain_text = (
+                f"PrimeFlow Run Approval Required\n"
+                f"{'=' * 40}\n\n"
+                f"Pending ID: {pending_id}\n"
+                f"Sub Account: {location_name}\n"
+                f"Commands: {commands_summary}\n\n"
+                f"APPROVE: {approve_url}\n"
+                f"DISAPPROVE: {reject_url}\n\n"
+                f"This approval expires in 30 minutes.\n"
+                f"PrimeFlow AI - 2FA Run Approval System"
+            )
+            msg.attach(MIMEText(plain_text, "plain", "utf-8"))
+            msg.attach(MIMEText(email_html, "html", "utf-8"))
 
             with smtplib.SMTP(smtp_host, smtp_port, timeout=30) as server:
                 server.starttls()
